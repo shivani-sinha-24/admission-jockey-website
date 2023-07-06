@@ -8,7 +8,10 @@ function Section1() {
      <section className="sec1">
 
 <div className="subsec11"> 
-        <h1>Over 6000+ Colleges & universities across india</h1>
+<div className="subsec11-heading">
+Over 6000+ Colleges & universities across India
+</div>
+        {/* <div className='number-h1'>Over 6000+ Colleges & universities across india</div> */}
     <form action="">
         <input type="text" placeholder="Search..."/>
         <button><i className="fa-solid fa-magnifying-glass"></i></button>
@@ -29,7 +32,7 @@ function Section1() {
             <img src={logo} alt="number"/>
         </div>
         <div className='number'>
-            <h1>5k+</h1>
+            <div className='number-h1'>5k+</div>
             <p>Total Colleges</p>
         </div>
 
@@ -40,7 +43,7 @@ function Section1() {
             <img src={logo} alt="number"/>
         </div>
         <div className='number'>
-            <h1>8k+</h1>
+            <div className='number-h1'>8k+</div>
             <p>Total Courses</p>
         </div>
 
@@ -51,7 +54,7 @@ function Section1() {
             <img src={logo} alt="number"/>
         </div>
         <div className='number'>
-            <h1>50k+</h1>
+            <div className='number-h1'>50k+</div>
             <p>Total Counsellors</p>
         </div>
 
@@ -62,7 +65,7 @@ function Section1() {
             <img src={logo} alt="number"/>
         </div>
         <div className='number'>
-            <h1>50k+</h1>
+            <div className='number-h1'>50k+</div>
             <p>Total Counsellors</p>
         </div>
 

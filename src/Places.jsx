@@ -4,7 +4,8 @@ function Places() {
   return (
   <>
   <section className='section5'>
-    <h1>Top Study Places</h1>
+    {/* <h1>Top Study Places</h1> */}
+    <div className="section5-h1">Top Study Places</div>
 
     <div className='study'>
         <div className='places1'>

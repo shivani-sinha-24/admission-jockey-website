@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-Regular.woff2') format('woff2'),
+       url('./fonts/Poppins-Regular.woff') format('woff');
+  /* Add more font formats if available */
+  /* Define different font weights and styles as needed */
+  /* Example:
+     font-weight: normal;
+     font-style: normal;
+  */
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
 *{
   margin: 0;
   padding: 0;
@@ -8,7 +23,7 @@
   width: 100vw;
   height: 80px; 
   /* remove the height when we got components */
-  background-color: rgb(4, 4, 106);
+  background-color: rgb(71, 1, 114);
 }
 .navbar{
   display: flex;
@@ -54,8 +69,7 @@
   display: flex;
 }
 
-.sec1{
-  /* position: absolute; */
+/* .sec1{
   width: 100vw;
   background-image: url("./assets/images/Cover.jpeg");
   background-repeat: no-repeat;
@@ -64,17 +78,48 @@
   text-align: center;
   z-index: 0;
   
+} */
+.sec1 {
+  position: relative;
+  width: 100vw;
+  text-align: center;
+  z-index: 0;
 }
 
+.sec1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(83, 2, 83, 0.5); /* Purple color with 50% opacity */
+  z-index: -1;
+}
+
+.sec1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/images/Cover.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 140%;
+  background-position: center calc(100% + 20px);
+  z-index: -2;
+}
 .subsec11{
   color: white;
 }
 
-.subsec11 h1{
-  font-size: 35px;
-  padding: 4.5rem 0rem;
-  /* margin: 2rem 0rem; */
-  /* i will change margin */
+.subsec11 .subsec11-heading{
+  font-size: 42px;
+    font-weight: bolder;
+    padding: 4rem 0rem 0rem 0rem;
+    /* margin: 2rem 0rem; */
+    /* i will change margin */
 }
 .subsec11 input {
   width: 40%;
@@ -91,7 +136,7 @@
 
 .subsec11 button {
   color: white;
-  background-color: rgb(4, 4, 106);
+  background-color: rgb(71, 1, 114);
   font-weight: 500;
   font-size: 20px;
   padding: 10px;
@@ -126,6 +171,7 @@
   width: 60%;
   bottom: 50%;
   transform: translate(35%, 50%);
+  border-radius: 8px;
 }
 
 .subsec131 {
@@ -143,8 +189,15 @@
 .logo img {
   width: 100%;
 }
-.subsec131 h1 {
-  font-weight: 500;
+.subsec131 .number-h1 {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.subsec131 p{
+  font-size: smaller;
+}
+.subsec131 .number{
+  text-align: start;
 }
 
 .card{
@@ -153,15 +206,17 @@
   background-color: #e9e6e6;
 }
 
-.card h1{
-  padding-top: 2rem;
-  margin-left: 11rem;
+.card .explore-courses{
+  padding: 2rem 0 2rem 0;
+  margin-left: 12.5rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
-
+  
 .section2{
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   justify-content: center;
   width: 100vw;
 }
@@ -170,20 +225,25 @@
   
   width: 23%;
   margin: 1rem 1rem;
-  border: 1px solid ;
-  border-radius: 10px;
+  border-radius: 20px;
+  /* border: 1px solid ; */
   overflow: hidden;
-  background-color: white;
- 
-
+  padding: 20px;
+  
 }
 .subsec23{
+  min-height: 460px;
+  box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5);
+  background-color: white;
+  border-radius: 20px;
   width: 100%;
+  overflow: hidden;
   
 }
 .subsec23 img{
   width: 100%;
-  height: 150px;
+  height: 250px;
+  border-radius: 20px;
   
 }
 .subsec23 h2{
@@ -210,35 +270,37 @@
 .subsec22 button{
   margin: 10px 15px;
   font-size: 15px;
-  padding: 5px;
+  padding:10px;
   border: none;
   color: white;
   border-radius: 10px;
   background: rgb(160,17,179);
-background: linear-gradient(90deg, rgba(160,17,179,1) 39%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(160,17,179,1) 39%, rgb(105, 12, 176) 100%);
 }
-
+  
 .outer{
   width: 25%;
   padding: 10px 20px;
-  font-size: 25px;
+  font-size: 40px;
+  font-weight: 500;
   bottom: 50%;
   border: none;
   border-radius: 10px;
-  color: rgb(16, 16, 141);
+  color: rgb(37, 11, 83); 
   background-color: white;
   transform: translate(150%, 50%);
 
 }
-
+  
 .section3{
- width: 100vw;
+  padding: 5rem 0;
+  width: 100vw;
   background-color:rgb(37, 11, 83); ;
 }
 .section3 h1 {
-  padding: 4rem 0rem;
-text-align: center;
-  font-size: 40px;
+  padding: 2rem 0rem;
+  text-align: center;
+  font-size: 40px !important;
   color: white;
   
 }
@@ -246,7 +308,7 @@ text-align: center;
   width: 100%;
   padding: 1rem;
 }
-
+  
 .main2{
   width: 100vw;
   display: flex ;
@@ -255,7 +317,7 @@ text-align: center;
 .box{
   width: 30%;
   margin: 0rem 1rem;
-  padding: 0rem 2rem;
+  padding: 0rem 2.5rem;
   text-align: center;
   border-radius: 15px;
 }
@@ -430,16 +492,17 @@ padding: 8px;
     width: 100vw;
    
   }
-  .section5 h1{
+  .section5 .section5-h1{
     margin: 2rem 0rem;
-    color:rgb(51, 4, 95);
-    font-size: 30px;
+    /* color:rgb(51, 4, 95); */
+    color: grey;
+    font-size: 40px;
     font-weight: 600;
   }
 
   .section6 {
     width: 100vw;
-    background-color: rgb(193, 188, 188);
+    background-color: rgb(238 236 236);
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -465,15 +528,15 @@ padding: 8px;
   }
 
   .advice button {
-
+    font-weight: 1000;
     width: 35%;
     padding: 0.8rem 2.2rem;
-    font-size: 25px;
+    font-size: 30px;
     color:rgb(51, 4, 95);
     margin: 0rem 2rem;
     border-radius: 15px;
     border: none;
-
+    background:white;
 
   }
 
@@ -497,19 +560,22 @@ padding: 8px;
     
   }
   .uni img {
-    
+    box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5);
     margin: 2rem 3rem;
     padding: 0rem 0rem;
     border-radius: 10px;
   }
   .upartner{
     color:rgb(51, 4, 95);
-    font-size: 35px;
-    
+    font-size: 45px;
+    text-align: start;
+    font-weight: 1000;
+    width: 100%;
+    padding-left: 10rem;
 
   }
-
-
+  
+  
   .card2{
     display: flex;
     padding: 1rem 8rem;
@@ -521,6 +587,13 @@ padding: 8px;
   .card21{
     margin: 1rem 1rem;
     width: 28%;
+    box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5);
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
   }
 
   .card21 img {
@@ -538,7 +611,9 @@ padding: 8px;
     z-index: 0;
    
   }
-
+  .card211 img{
+    margin-bottom: -20px;
+  }
   .card221 img {
     
     border-radius: 0;
@@ -553,8 +628,8 @@ padding: 8px;
    background-color: white;
     width: 100%;
     padding: 1rem;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
     z-index: 1;
     transform: translate(0%, -13%);
   }
@@ -577,7 +652,7 @@ padding: 8px;
     background-color: white;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transform: translate(0%, -14%);
+    /* transform: translate(0%, -14%); */
 
   }
 
@@ -617,7 +692,7 @@ background: linear-gradient(90deg, rgba(179,17,129,1) 0%, rgba(110,77,203,1) 54%
   .layout {
     display: flex;
   }
-
+  
   .layout1 {
     width: 50%;
     padding: 1rem 5rem;
@@ -644,11 +719,14 @@ margin: auto;
 
   .layout2 button {
     padding: 1rem 6rem;
-    font-size: 20px;
+    font-size: 38px;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
+    color: gray;
   }
   
+    
   .section8 {
     width: 100vw;
     background-color: rgb(182, 230, 230);
@@ -658,9 +736,13 @@ margin: auto;
     justify-content: center;
     align-items: center;
   }
+  .section8 .upartner{
+    color: rgb(8, 108, 8);
+  }
   .vm {
     padding: 1rem 4rem;
-    font-size: 18px;
+    font-size: 30px;
+    font-weight: bold;
     background-color: rgb(36, 90, 36);
     color: white;
     border: none;
@@ -669,7 +751,7 @@ margin: auto;
     transform: translate(0%, 100%);
 
   }
-
+  
   .students {
     display: flex;
     width: 100vw;
@@ -682,6 +764,7 @@ margin: auto;
     color: white;
     margin: auto;
     text-align: center;
+    padding-left: 8rem;
   }
   .count h1 {
     font-size: 80px;
@@ -730,21 +813,24 @@ margin: auto;
   .lorem {
      text-align: center;
      width: 100vw;
+     min-height: 100vh;
+     padding: 4rem 6rem;
   }
 
-  .lorem h1{
-    padding:  3rem 8rem;
+  .lorem .lorem-h1{
+    padding:  3rem 8rem 0rem 8rem;
     text-align: justify;
-    font-size: 40px;
-    letter-spacing: 0px;
-    color: rgb(51, 4, 95);
+    font-size: 45px;
+    /* letter-spacing: 0px; */
+    color: black;
     font-weight: 500;
-
+    line-height: 1.2;
+    font-weight: bold;
   }
 
   .lorem p {
     padding: 0rem 8rem;
-font-size: 20px;
+    font-size: 20px;
     text-align: justify;
     margin-bottom: 2rem;
     font-weight: 400;
@@ -754,7 +840,7 @@ font-size: 20px;
   .foot {
     width: 100vw;
     height: 450px;
-    background-color: rgb(1, 1, 21);
+    background-color: rgb(46, 46, 46);
   }
 
 
@@ -859,8 +945,11 @@ font-size: 20px;
   align-items: center;
 }
 
-.subsec11 h1 {
+.subsec11 .subsec11-heading {
   font-size: 30px;
+  /* font-size: 42px; */
+    font-weight: bolder;
+    padding: 2rem 0rem 0rem 0rem;
 }
 .subsec11 input{
   width: 50%;
@@ -879,12 +968,14 @@ font-size: 20px;
   margin: 0;
 }
 
-.card h1 {
+.card .explore-courses {
   padding-top: 2rem;
   margin-left: 7rem;
 }
 
 .subsec21 {
+  
+  padding: 10px;
   width: 25%;
   margin: 1rem 0.8rem;
   
@@ -932,7 +1023,7 @@ padding-bottom: 0;
 }
 
 .advice h1 {
-  font-size: 30px;
+  font-size: 30px !important;
   padding: 2rem 1rem;
 }
 .advice button {
@@ -973,7 +1064,7 @@ padding-bottom: 0;
 }
 .layout2 button{
   padding: 0.5rem 4rem;
-
+  font-size: 30px;
 }
 .section9{
   display: flex;
@@ -1018,7 +1109,13 @@ padding-bottom: 0;
 .group{
   margin: 1rem 0rem;
 }
-.lorem h1{
+.lorem {
+  text-align: center;
+  /* width: 100vw; */
+  /* min-height: 100vh; */
+  padding: 3rem 4rem;
+}
+.lorem .lorem-h1{
   padding: 1rem 3rem;
   font-size: 30px;
 }
@@ -1033,10 +1130,19 @@ padding-bottom: 0;
 
 @media all  and (max-width:900px) {
 
+  .upartner{
+    text-align: center;
+    padding-left: 0;
+    font-size: 30px;
+  }
   .navitem ul li {
     padding: 1.5rem 0.5rem;
     font-size: 15px;
-}
+    
+  }
+  .card211 img{
+    margin-bottom: -15px;
+  }
 
 .sec1 {
   display: flex;
@@ -1045,7 +1151,7 @@ padding-bottom: 0;
   align-items: center;
 }
 
-.subsec11 h1 {
+.subsec11 .subsec11-heading {
   font-size: 30px;
   padding: 1rem 2rem;
 }
@@ -1067,7 +1173,7 @@ padding-bottom: 0;
   margin: 0;
 }
 
-.card h1 {
+.card .explore-courses {
   padding-top: 2rem;
   margin-left: 7rem;
 }
@@ -1080,6 +1186,8 @@ padding-bottom: 0;
   width: 25%;
   margin: 1rem 0.8rem;
   text-align: center;
+  padding: 0px;
+
   
 }
 .subsec23 h2 {
@@ -1119,8 +1227,8 @@ padding-bottom: 0;
 }
 
 .advice h1 {
-  font-size: 30px;
-  padding: 0rem 1rem;
+  font-size: 25px !important;
+  padding: 1rem 1rem;
 }
 .advice button {
   padding: 5px;
@@ -1163,6 +1271,7 @@ padding-bottom: 0;
 }
 .layout2 button{
   padding: 0.5rem 4rem;
+  font-size: 25px;
 
 }
 .section9{
@@ -1190,6 +1299,17 @@ padding-bottom: 0;
 .list1{
   display: none;
 }
+
+.outer{
+  font-size: 30px;
+}
+
+.count{
+  width: 100%;
+  /* padding-left: 6rem; */
+  text-align: center;
+  
+}
 }
 
 @media all  and (max-width:700px) {
@@ -1199,6 +1319,10 @@ padding-bottom: 0;
     font-size: 10px;
 }
 
+.card211 img{
+  margin-bottom: -10px;
+}
+
 .sec1 {
   display: flex;
   flex-direction: column;
@@ -1206,7 +1330,7 @@ padding-bottom: 0;
   align-items: center;
 }
 
-.subsec11 h1 {
+.subsec11 .subsec11-heading {
   font-size: 24px;
   padding: 1rem 2rem;
 }
@@ -1237,7 +1361,7 @@ padding-bottom: 0;
   width: 25%;
   padding: 15px 5px;
 }
-.subsec131 h1{
+.subsec131 .number-h1{
   font-size: 15px;
 }
 .subsec131 p{
@@ -1258,7 +1382,7 @@ padding-bottom: 0;
   margin-top: 3.5rem;
 }
 
-.card h1 {
+.card .explore-courses {
   padding-top: 2rem;
   margin: 0;
   
@@ -1267,6 +1391,7 @@ padding-bottom: 0;
 .subsec21 {
   width: 30%;
   margin: 1rem 0.4rem;
+  /* padding: 10px; */
   
 }
 
@@ -1292,6 +1417,8 @@ padding-bottom: 0;
   font-size: 10px;
 }
 .outer{
+  font-size: 30px;
+
   width: 40%;
   transform: translate(0%, 50%);
 }
@@ -1361,8 +1488,8 @@ padding-bottom: 0;
 }
 
 .advice h1 {
-  font-size: 24px;
-  padding: 0rem 1rem;
+  font-size: 20px !important;
+  padding: 1rem 1rem;
   
 }
 .advice button {
@@ -1371,6 +1498,8 @@ padding-bottom: 0;
   margin: 0rem 1rem;
 }
 .upartner{
+  text-align: center;
+  padding-left: 0;
   font-size: 30px;
 }
 
@@ -1435,9 +1564,11 @@ padding-bottom: 0;
 }
 .layout2 button{
   padding: 0.5rem 4rem;
+  font-size: 20px;
 
 }
 .vm {
+  font-size: 25px;
   padding: 1rem 3rem;
 }
 .section9{
@@ -1468,12 +1599,15 @@ padding-bottom: 0;
 .students{
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
 }
 .count{
-  width: 90%;
+  width: 100%;
+  /* padding-left: 6rem; */
+  text-align: center;
+  
 }
 .count h1 {
   font-size: 60px;
@@ -1488,7 +1622,14 @@ padding-bottom: 0;
 .group{
   margin: 1rem 0rem;
 }
-.lorem h1{
+
+.lorem {
+  text-align: center;
+  /* width: 100vw; */
+  /* min-height: 100vh; */
+  padding: 2rem 3rem;
+}
+.lorem .lorem-h1{
   padding: 1rem 1rem;
   font-size: 30px;
 }
@@ -1508,6 +1649,10 @@ padding-bottom: 0;
 @media all  and (max-width:500px) {
   .navbar{
     height: 50px;
+  }
+  
+  .card211 img{
+    margin-bottom: -5px;
   }
 .navimg{
   width: 40%;
@@ -1555,7 +1700,7 @@ display: block;
   align-items: center;
 }
 
-.subsec11 h1 {
+.subsec11 .subsec11-heading {
   font-size: 20px;
   padding: 2rem 1.5rem;
 }
@@ -1593,7 +1738,7 @@ display: block;
   width: 25%;
   padding: 15px 0px;
 }
-.subsec131 h1{
+.subsec131 .number-h1{
   font-size: 20px;
 }
 .subsec131 p{
@@ -1621,7 +1766,7 @@ display: block;
 }
 
 
-.card h1 {
+.card .explore-courses {
   padding-top: 2rem;
   margin: 0;
   
@@ -1660,7 +1805,7 @@ display: block;
 .outer{
   width: 40%;
   transform: translate(0%, 50%);
-  font-size: 15px;
+  font-size: 25px;
   padding: 5px;
 }
 .section3 h1 {
@@ -1741,7 +1886,7 @@ padding-bottom: 0;
 }
 
 .advice h1 {
-  font-size: 15px;
+  font-size: 15px !important;
   padding: 0.5rem 0.5rem;
   
 }
@@ -1751,8 +1896,9 @@ padding-bottom: 0;
   margin: 0rem 0.4rem;
 }
 .upartner{
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  padding-left: 0;
 }
 
 .partners .carousel .slide img{
@@ -1823,7 +1969,7 @@ padding-bottom: 0;
 }
 .layout2 button{
   padding: 0.5rem 1rem;
-  font-size: 10px;
+  font-size: 15px;
 
 }
 .section8{
@@ -1831,7 +1977,7 @@ padding-bottom: 0;
 }
 .vm {
   padding: 0.5rem 1rem;
-  font-size: 15px;
+  font-size: 20px;
   transform: translate(0% , 70%)
 }
 .section9{
@@ -1873,6 +2019,8 @@ padding-bottom: 0;
 }
 .count{
   width: 100%;
+  /* padding-left: 0rem; */
+  font-size: large;
 }
 .count h1 {
   font-size: 30px;
@@ -1894,7 +2042,13 @@ padding-bottom: 0;
   padding: 5px;
   border-radius: 5px;
 }
-.lorem h1{
+.lorem {
+  text-align: center;
+  /* width: 100vw; */
+  /* min-height: 100vh; */
+  padding: 1rem 2rem;
+}
+.lorem .lorem-h1{
   padding: 0.3rem 1rem;
   font-size: 15px;
 }
