@@ -16,11 +16,12 @@ function Partner() {
    <section className='section6'>
 
 <div className='advice'>
-    <h1>Get advice From our Experts </h1>
+    <h1>Get advice from our experts </h1>
     <button>Click here</button>
 </div>
 
-<h1 className='upartner'> Our Top University Partners</h1>
+{/* <h1 className='upartner'> Our Top University Partners</h1> */}
+<div className="upartner">Our Top University Partners</div>
 
 <div className='partners'>
 <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true}>
@@ -58,7 +59,8 @@ function Partner() {
 </div>
 
 <div className='featured'>
-    <h2>Featured Universities</h2>
+    {/* <h2>Featured Universities</h2> */}
+    <div className="upartner">Featured Universities</div>
 
 
     <div className='ftuni'>

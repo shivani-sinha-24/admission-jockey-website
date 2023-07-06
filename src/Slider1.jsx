@@ -28,7 +28,7 @@ function Slider1() {
 
 <div className='box'>
    <img src={img2} alt="" />
-   <h2>Pay After Placement Program</h2>
+   <h2>Upskilling Program</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
@@ -38,7 +38,7 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
+   <h2>Digital</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
@@ -47,41 +47,6 @@ function Slider1() {
 </div>
 
 </div>
-
-<div className='main2'>
-
-<div className='box'>
-   <img src={img2} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
-    
-    <button className='first'>View Detais</button>
-   </div>
-</div>
-
-<div className='box'>
-   <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
-    
-    <button className='second'>View Detais</button>
-   </div>
-</div>
-
-<div className='box'>
-   <img src={img2} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
-   
-    <button className='third'>View Detais</button>
-   </div>
-</div>
-
-</div>
-
 
 <div className='main2'>
 
@@ -97,17 +62,17 @@ function Slider1() {
 
 <div className='box'>
    <img src={img2} alt="" />
-   <h2>Pay After Placement Program</h2>
+   <h2>Upskilling Program</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
-   
+    
     <button className='second'>View Detais</button>
    </div>
 </div>
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
+   <h2>Digital</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
@@ -116,6 +81,43 @@ function Slider1() {
 </div>
 
 </div>
+
+
+
+<div className='main2'>
+
+<div className='box'>
+   <img src={img} alt="" />
+   <h2>Pay After Placement Program</h2>
+   <div className='box1'>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
+    
+    <button className='first'>View Detais</button>
+   </div>
+</div>
+
+<div className='box'>
+   <img src={img2} alt="" />
+   <h2>Upskilling Program</h2>
+   <div className='box1'>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
+    
+    <button className='second'>View Detais</button>
+   </div>
+</div>
+
+<div className='box'>
+   <img src={img} alt="" />
+   <h2>Digital</h2>
+   <div className='box1'>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
+    
+    <button className='third'>View Detais</button>
+   </div>
+</div>
+
+</div>
+
 
 
 </Carousel>

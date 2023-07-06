@@ -17,8 +17,8 @@ function Slider4() {
 
 
 
-
-<h1 className='upartner'> Our Top onlline University Partners</h1>
+{/* <h1 className='upartner'> Our Top onlline University Partners</h1> */}
+<div className="upartner">Our Top onlline University Partners</div>
 
 <div className='partners'>
 <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true}>
@@ -56,7 +56,8 @@ function Slider4() {
 </div>
 
 <div className='featured'>
-    <h2>Featured  online  Universities</h2>
+    {/* <h2>Featured  online  Universities</h2> */}
+    <div className="upartner">Featured  online  Universities</div>
 
 
     <div className='ftuni'>
