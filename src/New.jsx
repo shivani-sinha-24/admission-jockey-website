@@ -18,7 +18,7 @@ function New() {
     console.log("error aa gyii")
    })
   return (
-    <div>New</div>
+    <div></div>
   )
 }
 

@@ -15,7 +15,10 @@ function Section2() {
    <>
    <div className='card'>
 
-   <h1>Explore Courses</h1>
+   {/* <h1>Explore Courses</h1> */}
+<div className="explore-courses">
+Explore Courses
+</div>
    
    < div className='section2'>
 
