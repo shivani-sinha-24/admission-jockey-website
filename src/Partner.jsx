@@ -8,6 +8,8 @@ import img3 from "./assets/hyd.jpg"
 import logo1 from "./assets/images/UPESLOGO.jpeg"
 import logo2 from "./assets/images/Woxenlogo.jpeg"
 import logo3 from "./assets/images/graphiceralogo.png"
+// import logo5 from "./assets/images/graphiceralogo.png"
+import logo5 from './assets/images/graphiceralogo.png'
 import logo4 from "./assets/images/utranchellogo.jpeg"
 
 function Partner() {
@@ -71,15 +73,18 @@ function Partner() {
 
             <div className='card21'>
                 <div className='card211'>
-                <img src={img} alt="" />
+                <img src={`https://images.shiksha.com/mediadata/images/1613133581php8WfURn.jpeg`} alt="" />
                 </div>
                
                 <div className='card22'>
                     <div className='card221'>
                     <img src={logo1} alt="" />
                     </div>
-                    
+                {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
                     <h4>Universitiy of petrolium and energy studies</h4>
+                    </div>
                 </div>
                 <hr />
                 <div className='card23'>
@@ -93,15 +98,19 @@ function Partner() {
 
             <div className='card21'>
                 <div className='card211'>
-                <img src={img2} alt="" />
+                <img src={`https://i.ytimg.com/vi/PbFFbTvyero/maxresdefault.jpg`} alt="" />
                 </div>
                 
                 <div className='card22'>
                     <div className='card221'>
                     <img src={logo2} alt="" />
                     </div>
-                   
-                    <h4>Universitiy of petrolium and energy studies</h4>
+                    
+                {/* <div className="card221" style={{ backgroundImage: `url(${logo2})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
+                    <h4>Woxen University, Hyderabad</h4>
+                    </div>
                 </div>
                 <hr />
                 <div className='card23'>
@@ -115,15 +124,100 @@ function Partner() {
 
             <div className='card21'>
                 <div className='card211'>
-                <img src={img2} alt="" />
+                <img src={`https://en.janbharattimes.com/wp-content/uploads/2023/03/uttaranchal-university-dehradun.jpg`} alt="" />
                 </div>
                
                 <div className='card22'>
                     <div className='card221'>
                     <img src={logo4} alt="" />
                     </div>
-                  
+                    {/* <div className="card221" style={{ backgroundImage: `url(${logo4})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 90%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
+                    <h4>Uttaranchal Universitiy, Dehradun</h4>
+                    </div>
+                </div>
+                <hr />
+                <div className='card23'>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
+                    <button>View details</button>
+                </div>
+
+                
+
+            </div>
+
+
+        </div>
+
+        <div className='card2'>
+
+            <div className='card21'>
+                <div className='card211'>
+                <img src={`https://images.shiksha.com/mediadata/images/1613133581php8WfURn.jpeg`} alt="" />
+                </div>
+               
+                <div className='card22'>
+                    <div className='card221'>
+                    <img src={logo1} alt="" />
+                    </div>
+                {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
                     <h4>Universitiy of petrolium and energy studies</h4>
+                    </div>
+                </div>
+                <hr />
+                <div className='card23'>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
+                    <button>View details</button>
+                </div>
+
+                
+
+            </div>
+
+            <div className='card21'>
+                <div className='card211'>
+                <img src={`https://i.ytimg.com/vi/PbFFbTvyero/maxresdefault.jpg`} alt="" />
+                </div>
+                
+                <div className='card22'>
+                    <div className='card221'>
+                    <img src={logo2} alt="" />
+                    </div>
+                    
+                {/* <div className="card221" style={{ backgroundImage: `url(${logo2})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
+                    <h4>Woxen University, Hyderabad</h4>
+                    </div>
+                </div>
+                <hr />
+                <div className='card23'>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
+                    <button>View details</button>
+                </div>
+
+                
+
+            </div>
+
+            <div className='card21'>
+                <div className='card211'>
+                <img src={`https://en.janbharattimes.com/wp-content/uploads/2023/03/uttaranchal-university-dehradun.jpg`} alt="" />
+                </div>
+               
+                <div className='card22'>
+                    <div className='card221'>
+                    <img src={logo4} alt="" />
+                    </div>
+                    
+                {/* <div className="card221" style={{ backgroundImage: `url(${logo4})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 90%', backgroundRepeat:'no-repeat' }}></div> */}
+                    <div className="card222">
+                        
+                    <h4>Uttaranchal Universitiy, Dehradun</h4>
+                    </div>
                 </div>
                 <hr />
                 <div className='card23'>
@@ -143,15 +237,18 @@ function Partner() {
 
 <div className='card21'>
     <div className='card211'>
-    <img src={img} alt="" />
+    <img src={`https://images.shiksha.com/mediadata/images/1613133581php8WfURn.jpeg`} alt="" />
     </div>
    
     <div className='card22'>
         <div className='card221'>
         <img src={logo1} alt="" />
         </div>
-        
+    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+        <div className="card222">
+            
         <h4>Universitiy of petrolium and energy studies</h4>
+        </div>
     </div>
     <hr />
     <div className='card23'>
@@ -165,15 +262,19 @@ function Partner() {
 
 <div className='card21'>
     <div className='card211'>
-    <img src={img2} alt="" />
+    <img src={`https://i.ytimg.com/vi/PbFFbTvyero/maxresdefault.jpg`} alt="" />
     </div>
     
     <div className='card22'>
         <div className='card221'>
         <img src={logo2} alt="" />
         </div>
-       
-        <h4>Universitiy of petrolium and energy studies</h4>
+        
+    {/* <div className="card221" style={{ backgroundImage: `url(${logo2})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+        <div className="card222">
+            
+        <h4>Woxen University, Hyderabad</h4>
+        </div>
     </div>
     <hr />
     <div className='card23'>
@@ -187,88 +288,19 @@ function Partner() {
 
 <div className='card21'>
     <div className='card211'>
-    <img src={img2} alt="" />
+    <img src={`https://en.janbharattimes.com/wp-content/uploads/2023/03/uttaranchal-university-dehradun.jpg`} alt="" />
     </div>
    
     <div className='card22'>
         <div className='card221'>
         <img src={logo4} alt="" />
-        </div>
-      
-        <h4>Universitiy of petrolium and energy studies</h4>
-    </div>
-    <hr />
-    <div className='card23'>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-        <button>View details</button>
-    </div>
-
-    
-
-</div>
-
-
-</div>
-
-
-
-<div className='card2'>
-
-<div className='card21'>
-    <div className='card211'>
-    <img src={img} alt="" />
-    </div>
-   
-    <div className='card22'>
-        <div className='card221'>
-        <img src={logo1} alt="" />
         </div>
         
-        <h4>Universitiy of petrolium and energy studies</h4>
-    </div>
-    <hr />
-    <div className='card23'>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-        <button>View details</button>
-    </div>
-
-    
-
-</div>
-
-<div className='card21'>
-    <div className='card211'>
-    <img src={img2} alt="" />
-    </div>
-    
-    <div className='card22'>
-        <div className='card221'>
-        <img src={logo2} alt="" />
+    {/* <div className="card221" style={{ backgroundImage: `url(${logo4})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 90%', backgroundRepeat:'no-repeat' }}></div> */}
+        <div className="card222">
+            
+        <h4>Uttaranchal Universitiy, Dehradun</h4>
         </div>
-       
-        <h4>Universitiy of petrolium and energy studies</h4>
-    </div>
-    <hr />
-    <div className='card23'>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-        <button>View details</button>
-    </div>
-
-    
-
-</div>
-
-<div className='card21'>
-    <div className='card211'>
-    <img src={img2} alt="" />
-    </div>
-   
-    <div className='card22'>
-        <div className='card221'>
-        <img src={logo4} alt="" />
-        </div>
-      
-        <h4>Universitiy of petrolium and energy studies</h4>
     </div>
     <hr />
     <div className='card23'>
@@ -282,7 +314,6 @@ function Partner() {
 
 
 </div>
-
 
 
     </Carousel>

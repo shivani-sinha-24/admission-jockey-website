@@ -23,14 +23,18 @@
   width: 100vw;
   height: 80px; 
   /* remove the height when we got components */
-  background-color: rgb(71, 1, 114);
+  /* background-color: rgb(71, 1, 114); */
+  
+  background-color: #493a70;
 }
 .navbar{
   display: flex;
   justify-content: space-between;
   width: 100vw;
   position: sticky;
-  color:  rgb(4, 4, 106);
+  /* color:  rgb(4, 4, 106); */
+  color:  #493a70;
+  padding: 5px 3.5rem;
 }
 .navimg{
   width: 30%;
@@ -93,7 +97,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 2, 83, 0.5); /* Purple color with 50% opacity */
+  /* background-color: rgba(44, 8, 74, 0.5);  good one */
+  background-color: rgba(73, 58, 112, 0.75);
   z-index: -1;
 }
 
@@ -149,17 +154,17 @@
 }
 
 .subsec12{
-  color:black;
-  margin-top: 10px;
+  color:white;
+  margin: -30px 0 40px 0;
   padding: 30px;
 
 }
 
 .subsec12 span {
   font-size: 15px;
-  padding: 10px ;
+  padding: 3px 10px ;
   margin: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   
   
@@ -167,7 +172,7 @@
 
 .subsec13{
   display: flex;
-  background-color: #e9e6e6;
+  background-color: #e8e4f2;
   width: 60%;
   bottom: 50%;
   transform: translate(35%, 50%);
@@ -203,7 +208,7 @@
 .card{
   width: 100vw;
   margin-top: 5rem;
-  background-color: #e9e6e6;
+  background-color: #e8e4f2;
 }
 
 .card .explore-courses{
@@ -248,14 +253,16 @@
 }
 .subsec23 h2{
   font-size: 25px;
-  font-weight: 400;
+  font-weight: 900;
   padding-right: 4rem;
   margin: -0.4rem 0rem;
   padding: 2rem 0.5rem;
   color: rgb(4, 4, 106);
   background-color: white;
 }
-
+.subsec23-h1{
+  padding: 0 10px;
+}
 .subsec22{
   display: flex;
   justify-content: space-between;
@@ -275,7 +282,7 @@
   color: white;
   border-radius: 10px;
   background: rgb(160,17,179);
-  background: linear-gradient(90deg, rgba(160,17,179,1) 39%, rgb(105, 12, 176) 100%);
+  background: linear-gradient(90deg, #A6308A 29%, rgb(105, 12, 176) 100%);
 }
   
 .outer{
@@ -330,9 +337,13 @@
 }
 .box h2{
   background-color: bisque;
-  
-  padding: 1.5rem 0rem;
+  max-height: 80px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .box1{
   display: flex;
   justify-content: space-between;
@@ -387,13 +398,15 @@
 
 .sec4{
   width: 100vw;
+  margin-bottom: 45px;
+  box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.8);
  
 }
 
 .sec4 img {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  /* object-fit: cover; */
   object-position: center;
 
  
@@ -495,7 +508,7 @@ padding: 8px;
   .section5 .section5-h1{
     margin: 2rem 0rem;
     /* color:rgb(51, 4, 95); */
-    color: grey;
+    color: black;
     font-size: 40px;
     font-weight: 600;
   }
@@ -557,7 +570,7 @@ padding: 8px;
     display: flex;
     width: 100%;
     justify-content: center;
-    
+
   }
   .uni img {
     box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5);
@@ -579,6 +592,7 @@ padding: 8px;
   .card2{
     display: flex;
     padding: 1rem 8rem;
+    gap: 20px;
     justify-content: center;
   
    
@@ -601,7 +615,9 @@ padding: 8px;
     border-top-right-radius: 20px;
    
   }
-
+.card21 hr{
+  margin: 0 20px;
+}
   .card221{
     display: flex;
     justify-content: center;
@@ -612,7 +628,8 @@ padding: 8px;
    
   }
   .card211 img{
-    margin-bottom: -20px;
+    margin-bottom: -15px;
+    height: 160px;
   }
   .card221 img {
     
@@ -625,13 +642,14 @@ padding: 8px;
 
   .card22{
     display: flex;
-   background-color: white;
+    background-color: white;
     width: 100%;
     padding: 1rem;
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
     z-index: 1;
     transform: translate(0%, -13%);
+    height: 100px;
   }
 
   .card22 h4{
@@ -659,16 +677,18 @@ padding: 8px;
   .card23 p {
     width: 60%;
     text-align:justify;
-    font-size: 13px;
+    font-size: 11px;
     padding: 0px 5px;
   }
 
   .card23 button {
     width: 35%;
-    font-size: 10px;
-    border: none;
+    font-size: 15px;
+    border:  1px solid black;
+    background-color: white;
+    /* border: none; */
     border-radius: 5px;
-    padding: 10px 5px;
+    padding: 5px;
     
   }
   .featured {
@@ -686,8 +706,8 @@ padding: 8px;
   .section7 {
     width: 100vw;
     color: white;
-    background: rgb(179,17,129);
-background: linear-gradient(90deg, rgba(179,17,129,1) 0%, rgba(110,77,203,1) 54%, rgba(0,100,255,1) 100%);
+    /* background: rgb(179,17,129); */
+    background: linear-gradient(90deg, #A6308A 0%, rgb(96, 66, 177)100%);
   }
   .layout {
     display: flex;
@@ -718,18 +738,19 @@ margin: auto;
   }
 
   .layout2 button {
-    padding: 1rem 6rem;
+    padding: 0.5rem 6.5rem;
     font-size: 38px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
-    color: gray;
+    color: rgb(45, 45, 45);
+    background-color: white;
   }
   
     
   .section8 {
     width: 100vw;
-    background-color: rgb(182, 230, 230);
+    background-color: rgb(231 255 250);
     padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
@@ -742,7 +763,7 @@ margin: auto;
   .vm {
     padding: 1rem 4rem;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: medium;
     background-color: rgb(36, 90, 36);
     color: white;
     border: none;
@@ -755,15 +776,16 @@ margin: auto;
   .students {
     display: flex;
     width: 100vw;
-    background: rgb(179,17,129);
-    background: linear-gradient(90deg, rgba(179,17,129,1) 0%, rgba(110,77,203,1) 54%, rgba(0,100,255,1) 100%);
+    /* background: rgb(179,17,129); */
+    background: linear-gradient(to bottom right, #A6308A -15%, rgb(96, 66, 177)100%);
+
   }
 
   .count {
     width:50%;
     color: white;
     margin: auto;
-    text-align: center;
+    text-align: start;
     padding-left: 8rem;
   }
   .count h1 {
@@ -907,7 +929,7 @@ margin: auto;
   }
 
   .mob1{
-        background-color: rgb(167, 152, 152);
+        background-color: rgb(241 235 235);
         border-radius: 50%;
         height: 500px;
         margin: 4rem 0rem;
@@ -1129,7 +1151,10 @@ padding-bottom: 0;
 }
 
 @media all  and (max-width:900px) {
-
+  .box h2{
+    max-height: 80px;
+    font-size: 20px;
+  }
   .upartner{
     text-align: center;
     padding-left: 0;
@@ -1308,12 +1333,20 @@ padding-bottom: 0;
   width: 100%;
   /* padding-left: 6rem; */
   text-align: center;
-  
+
+}
+.subsec12{
+  padding: 15px;
+  margin:  5px;
 }
 }
 
 @media all  and (max-width:700px) {
 
+  .box h2{
+    min-height: 80px;
+    font-size: 20px;
+  }
   .navitem ul li {
     padding: 1rem 0.5rem;
     font-size: 10px;
@@ -1347,6 +1380,7 @@ padding-bottom: 0;
 }
 .subsec12{
   padding: 15px;
+  margin:  5px;
 }
 .subsec12 span{
   margin: 5px;
@@ -1647,6 +1681,10 @@ padding-bottom: 0;
 
 
 @media all  and (max-width:500px) {
+  .box h2{
+    max-height: 50px;
+    font-size: 25pxx;
+  }
   .navbar{
     height: 50px;
   }
@@ -2019,16 +2057,17 @@ padding-bottom: 0;
 }
 .count{
   width: 100%;
-  /* padding-left: 0rem; */
+  padding-left: 0rem;
   font-size: large;
+  text-align: center;
 }
 .count h1 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 5px;
 }
 .count h2 {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 30px;
+  line-height: 25px;
 }
 .ach{
   width: 100%;
