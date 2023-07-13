@@ -27,7 +27,10 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC1} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Management and Business</h2>
+</div>
 <div className='subsec22'>
     <p>34 Course </p>
     <button>View Courses</button>
@@ -43,7 +46,11 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC2} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Computers and Technology</h2>
+</div>
+{/* <h2>Computers and Technology</h2> */}
 <div className='subsec22'>
     <p>34 Course </p>
     <button>View Courses</button>
@@ -58,7 +65,11 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC3} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Design and Animation</h2>
+</div>
+{/* <h2>Design and Animation</h2> */}
 <div className='subsec22'>
     <p>34 Course </p>
     <button >View Courses</button>
@@ -75,7 +86,11 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC4} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Medical</h2>
+</div>
+{/* <h2>Medical</h2> */}
 <div className='subsec22'>
     <p>34 Course </p>
     <button>View Courses</button>
@@ -91,7 +106,11 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC5} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Pharmacy</h2>
+</div>
+{/* <h2>Pharmacy</h2> */}
 <div className='subsec22'>
     <p>34 Course </p>
     <button>View Courses</button>
@@ -106,7 +125,11 @@ Explore Courses
 
 <div className='subsec23'>
 <img src={EC6} alt="target" />
+<div className="subsec23-h1">
+
 <h2>Engineering</h2>
+</div>
+{/* <h2>Engineering</h2> */}
 <div className='subsec22'>
     <p>34 Course </p>
     <button>View Courses</button>

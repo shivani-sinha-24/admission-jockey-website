@@ -13,7 +13,7 @@ function Slider3() {
     <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} showArrows={false}>
         <div className='layout'>
            <div className='layout1'>
-            <h1>Get guarnteed</h1>
+            <h1>Get guaranteed</h1>
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
@@ -24,7 +24,7 @@ function Slider3() {
 
         <div className='layout'>
            <div className='layout1'>
-            <h1>Get guarnteed</h1>
+            <h1>Get guaranteed</h1>
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
@@ -35,7 +35,7 @@ function Slider3() {
 
         <div className='layout'>
            <div className='layout1'>
-            <h1> <span>Get </span> <span>guarnteed</span></h1>
+            <h1> <span>Get </span> <span>guaranteed</span></h1>
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
