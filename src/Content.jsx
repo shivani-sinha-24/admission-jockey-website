@@ -2,6 +2,8 @@ import React from 'react'
 import girl from "./assets/girl.jpg"
 import boy from "./assets/men.jpg"
 import logo from "./assets/logo.png"
+import logo3 from "./assets/images/graphiceralogo.png"
+
 
 function Content() {
   return (
@@ -18,7 +20,7 @@ function Content() {
              <div className='group'>
              <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -26,7 +28,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -34,7 +36,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -45,7 +47,7 @@ function Content() {
             <div className='group'>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -53,7 +55,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -61,7 +63,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             
             </div>
@@ -69,7 +71,7 @@ function Content() {
              <div className='group'>
              <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -77,7 +79,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />
@@ -85,7 +87,7 @@ function Content() {
             </div>
             <div className='human'>
                 <img src={girl}alt="" />
-                <img src={logo} alt="" />
+                <img src={logo3} alt="" />
             </div>
             <div className='human'>
                 <img src={boy}alt="" />

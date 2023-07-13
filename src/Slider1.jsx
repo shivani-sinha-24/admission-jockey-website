@@ -12,24 +12,24 @@ function Slider1() {
 
  <div className='c1'>
 
- <Carousel  infiniteLoop={true} showStatus={false} autoPlay={true}>
+ <Carousel  infiniteLoop={true} showStatus={false} autoPlay={false}>
 
 <div className='main2'>
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
+   <h2 className='blue'>Pay After Placement Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='first'>View Detais</button>
    </div>
 </div>
 
-<div className='box'>
+<div className='box '>
    <img src={img2} alt="" />
-   <h2>Upskilling Program</h2>
-   <div className='box1'>
+   <h2  className='green'>Upskilling Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='second'>View Detais</button>
@@ -38,7 +38,7 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Digital</h2>
+   <h2 className='orange'>Digital</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
@@ -52,18 +52,18 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
+   <h2 className='blue'>Pay After Placement Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='first'>View Detais</button>
    </div>
 </div>
 
-<div className='box'>
+<div className='box '>
    <img src={img2} alt="" />
-   <h2>Upskilling Program</h2>
-   <div className='box1'>
+   <h2  className='green'>Upskilling Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='second'>View Detais</button>
@@ -72,7 +72,7 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Digital</h2>
+   <h2 className='orange'>Digital</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
@@ -88,18 +88,18 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Pay After Placement Program</h2>
-   <div className='box1'>
+   <h2 className='blue'>Pay After Placement Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='first'>View Detais</button>
    </div>
 </div>
 
-<div className='box'>
+<div className='box '>
    <img src={img2} alt="" />
-   <h2>Upskilling Program</h2>
-   <div className='box1'>
+   <h2  className='green'>Upskilling Program</h2>
+   <div className='box1' >
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
     <button className='second'>View Detais</button>
@@ -108,7 +108,7 @@ function Slider1() {
 
 <div className='box'>
    <img src={img} alt="" />
-   <h2>Digital</h2>
+   <h2 className='orange'>Digital</h2>
    <div className='box1'>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nostrum ipsam voluptatibus rerum esse sit illo est eligendi excepturi expedita.</p>
     
