@@ -6,8 +6,7 @@ export const getCollegeList = () => async (dispatch) => {
     try {
         dispatch({ type: GET_COLLEGE_LIST });
         const { data } = await API.get(`/getWebCollegeList`);
-        console.log(data);
-        // dispatch({ type: SUCCESS_COLLEGE_LIST, payload: data });
+        dispatch({ type: SUCCESS_COLLEGE_LIST, payload: data });
     } catch (error) {
         console.log(error, "error")
         dispatch({

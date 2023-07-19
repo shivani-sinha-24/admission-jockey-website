@@ -3,7 +3,6 @@ import './App.css'
 import Home from './Home'
 import Login from './Login'
 import Signin from './Signin'
-import New from './New'
 import { Provider } from 'react-redux';
 import { ToastContainer, toast } from "react-toastify";
 import store from '../redux/store';
@@ -12,7 +11,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   console.log(import.meta.env.VITE_BASE_URL)
-
   return (
     <Provider store={store}>
       <BrowserRouter>
