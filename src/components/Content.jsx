@@ -1,8 +1,8 @@
 import React from 'react'
-import girl from "./assets/girl.jpg"
-import boy from "./assets/men.jpg"
-import logo from "./assets/logo.png"
-import logo3 from "./assets/images/graphiceralogo.png"
+import girl from "../assets/girl.jpg"
+import boy from "../assets/men.jpg"
+import logo from "../assets/logo.png"
+import logo3 from "../assets/images/graphiceralogo.png"
 
 
 function Content() {

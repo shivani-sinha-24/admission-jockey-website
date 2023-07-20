@@ -13,7 +13,7 @@ function Searchnav() {
 
             <form action="">
             <input type="text" placeholder='College name' />
-           <button><i className="fa-solid fa-magnifying-glass"></i></button>
+           <button onClick={e=>{e.preventDefault();}}><i className="fa-solid fa-magnifying-glass"></i></button>
 
 
             </form>

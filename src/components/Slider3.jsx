@@ -1,10 +1,10 @@
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import img from "./assets/images.jpg"
-import img2 from "./assets/dummyimages/college.jpg"
+import img from "../assets/images.jpg"
+import img2 from "../assets/dummyimages/college.jpg"
 
-function Slider3() {
+function Slider3({isOpen,setIsOpen}) {
   return (
    <>
    
@@ -17,7 +17,7 @@ function Slider3() {
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
-            <button>Apply Now</button>
+            <button onClick={()=>setIsOpen(true)}>Apply Now</button>
            </div>
 
         </div>
@@ -28,7 +28,7 @@ function Slider3() {
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
-            <button>Apply Now</button>
+            <button onClick={()=>setIsOpen(true)}>Apply Now</button>
            </div>
 
         </div>
@@ -39,7 +39,7 @@ function Slider3() {
             <p>Admission in your dream college!!</p>
            </div>
            <div className='layout2'>
-            <button>Apply Now</button>
+            <button onClick={()=>setIsOpen(true)}>Apply Now</button>
            </div>
         </div>
 

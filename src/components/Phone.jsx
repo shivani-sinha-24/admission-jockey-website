@@ -1,5 +1,5 @@
 import React from 'react'
-import phone1 from "./assets/phone.png"
+import phone1 from "../assets/phone.png"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 function Phone() {

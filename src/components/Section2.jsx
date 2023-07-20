@@ -1,10 +1,10 @@
 import React from 'react'
-import EC1 from "./assets/images/EC1.jpeg"
-import EC2 from "./assets/images/EC2.jpeg"
-import EC3 from "./assets/images/EC3.jpeg"
-import EC4 from "./assets/images/EC4.jpeg"
-import EC5 from "./assets/images/EC5.jpeg"
-import EC6 from "./assets/images/EC6.webp"
+import EC1 from "../assets/images/EC1.jpeg"
+import EC2 from "../assets/images/EC2.jpeg"
+import EC3 from "../assets/images/EC3.jpeg"
+import EC4 from "../assets/images/EC4.jpeg"
+import EC5 from "../assets/images/EC5.jpeg"
+import EC6 from "../assets/images/EC6.webp"
 
 
 

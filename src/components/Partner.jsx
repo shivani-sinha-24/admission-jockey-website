@@ -1,25 +1,25 @@
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import img from "./assets/bagaloe.jpg"
-import img1 from "./assets/dehradun.jpg"
-import img2 from "./assets/delhi.jpg"
-import img3 from "./assets/hyd.jpg"
-import logo1 from "./assets/images/UPESLOGO.jpeg"
-import logo2 from "./assets/images/Woxenlogo.jpeg"
-import logo3 from "./assets/images/graphiceralogo.png"
-// import logo5 from "./assets/images/graphiceralogo.png"
-import logo5 from './assets/images/graphiceralogo.png'
-import logo4 from "./assets/images/utranchellogo.jpeg"
+import img from "../assets/bagaloe.jpg"
+import img1 from "../assets/dehradun.jpg"
+import img2 from "../assets/delhi.jpg"
+import img3 from "../assets/hyd.jpg"
+import logo1 from "../assets/images/UPESLOGO.jpeg"
+import logo2 from "../assets/images/Woxenlogo.jpeg"
+import logo3 from "../assets/images/graphiceralogo.png"
+// import logo5 from "../assets/images/graphiceralogo.png"
+import logo5 from '../assets/images/graphiceralogo.png'
+import logo4 from "../assets/images/utranchellogo.jpeg"
 
-function Partner() {
+function Partner({isOpen, setIsOpen}) {
   return (
    <>
    <section className='section6'>
 
 <div className='advice'>
     <h1>Get advice from our experts </h1>
-    <button>Click here</button>
+    <button onClick={()=>setIsOpen(true)}>Click here</button>
 </div>
 
 {/* <h1 className='upartner'> Our Top University Partners</h1> */}
