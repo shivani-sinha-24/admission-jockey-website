@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Carousel } from 'react-responsive-carousel';
-import img from "./assets/bagaloe.jpg"
-import img1 from "./assets/dehradun.jpg"
-import img2 from "./assets/delhi.jpg"
+import img from "../assets/bagaloe.jpg"
+import img1 from "../assets/dehradun.jpg"
+import img2 from "../assets/delhi.jpg"
 import.meta.env.VITE_BASE_URL
-import img3 from "./assets/hyd.jpg"
-import logo1 from "./assets/images/UPESLOGO.jpeg"
-import logo2 from "./assets/images/Woxenlogo.jpeg"
-import logo3 from "./assets/images/graphiceralogo.png"
+import img3 from "../assets/hyd.jpg"
+import logo1 from "../assets/images/UPESLOGO.jpeg"
+import logo2 from "../assets/images/Woxenlogo.jpeg"
+import logo3 from "../assets/images/graphiceralogo.png"
 // import logo5 from "./assets/images/graphiceralogo.png"
-import { getCollegeList } from "../redux/Action/PropertyAction";
-import logo5 from './assets/images/graphiceralogo.png'
-import logo4 from "./assets/images/utranchellogo.jpeg"
+import { getCollegeList } from "../../redux/Action/PropertyAction";
+import logo5 from '../assets/images/graphiceralogo.png'
+import logo4 from "../assets/images/utranchellogo.jpeg"
 
 function Partner() {
 

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './Home'
-import Login from './Login'
-import Signin from './Signin'
+import Home from './pages/homepage/Home'
+import Login from './pages/loginpage/Login'
+import Signin from './pages/signinpage/Signin'
 import { Provider } from 'react-redux';
 import { ToastContainer, toast } from "react-toastify";
 import store from '../redux/store';
-import Search from './Search'
+import Search from './pages/searchpage/Search'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {

@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Searchnav() {
+  const [search,setSearch] = useState('');
+  
+  console.log(search);
   return (
     <>
     <div className='section10'>
@@ -12,10 +15,8 @@ function Searchnav() {
         <div className='searchform'>
 
             <form action="">
-            <input type="text" placeholder='College name' />
-           <button onClick={e=>{e.preventDefault();}}><i className="fa-solid fa-magnifying-glass"></i></button>
-
-
+              <input type="text" placeholder='College name' name='search' value={search} onChange={e=>setSearch(e.target.value)}/>
+              <button onClick={e=>{e.preventDefault();}}><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
            
