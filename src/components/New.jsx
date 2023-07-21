@@ -12,11 +12,11 @@ function New() {
     }
   };
 
-    axios.get(`${import.meta.env.VITE_BASE_URL}/getUniversityCourse` , config ).then((res)=>{
-        console.log(res)
-   }).catch(()=>{
-    console.log("error aa gyii")
-   })
+  //   axios.get(`${import.meta.env.VITE_BASE_URL}/getUniversityCourse` , config ).then((res)=>{
+  //       console.log(res)
+  //  }).catch(()=>{
+  //   console.log("error aa gyii")
+  //  })
   return (
     <div></div>
   )
