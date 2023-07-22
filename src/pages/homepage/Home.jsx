@@ -17,7 +17,7 @@ import Lorem from '../../components/Lorem'
 import Footer from '../../components/Footer'
 import New from '../../components/New'
 
-function Home() {
+function Home({search, setSearch}) {
   
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,12 +41,16 @@ function Home() {
       {isOpen && (
         <Modal
           isOpen={isOpen}
+          setIsOpen={setIsOpen}
           onRequestClose={handleOpenModal}
         />
       )}
       <Bar/>
       <Nav/>
-      <Section1/>
+      <Section1 
+        search={search}
+        setSearch={setSearch}
+      />
       <Section2/>
       <Slider1/>
       <Slider2/>
@@ -54,11 +58,11 @@ function Home() {
       <Partner
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        />
+      />
       <Slider3
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        />
+      />
       <Slider4/>
       <Phone2/>
       <Content/>

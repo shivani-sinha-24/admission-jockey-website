@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Searchnav() {
-  const [search,setSearch] = useState('');
+function Searchnav({search,setSearch,setState,setCity,setType}) {
   
-  console.log(search);
+  const clearPrevFilter = ()=>{
+    setCity([]); setState([]); setType([]);
+  }
   return (
     <>
     <div className='section10'>
@@ -15,8 +16,8 @@ function Searchnav() {
         <div className='searchform'>
 
             <form action="">
-              <input type="text" placeholder='College name' name='search' value={search} onChange={e=>setSearch(e.target.value)}/>
-              <button onClick={e=>{e.preventDefault();}}><i className="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" placeholder='College name' name='search' value={search} onChange={e=>{setSearch(e.target.value);}}/>
+              <button onClick={e=>{e.preventDefault()}}><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
            

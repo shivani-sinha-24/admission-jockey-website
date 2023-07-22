@@ -1,5 +1,5 @@
 .modal-base {
-    top: 20%;
+    top: 15%;
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -16,7 +16,9 @@
     color: rgb(50, 8, 87,1);;
 
   }
-  
+  .modal-base button:hover{
+    cursor: pointer;
+  }
   .modal-base_after-open {
     opacity: 1;
     transform: scale(1);

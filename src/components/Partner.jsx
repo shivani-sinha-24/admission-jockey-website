@@ -15,7 +15,7 @@ import { getCollegeList } from "../../redux/Action/PropertyAction";
 import logo5 from '../assets/images/graphiceralogo.png'
 import logo4 from "../assets/images/utranchellogo.jpeg"
 
-function Partner() {
+function Partner({isOpen,setIsOpen}) {
 
     const dispatch = useDispatch();
     const [universityRows, setUniversityRows] = useState();
@@ -47,7 +47,7 @@ function Partner() {
 
                 <div className='advice'>
                     <h1>Get advice from our experts </h1>
-                    <button>Click here</button>
+                    <button onClick={()=>setIsOpen(true)}>Click here</button>
                 </div>
 
                 {/* <h1 className='upartner'> Our Top University Partners</h1> */}
