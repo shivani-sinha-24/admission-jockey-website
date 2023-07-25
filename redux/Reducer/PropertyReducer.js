@@ -1,7 +1,7 @@
 import { SUCCESS_COLLEGE_LIST } from '../Constants/Constants';
 
 let initState = {
-    property: []
+    property: [],
 }
 
 const propertyReducer = (state = initState, action) => {

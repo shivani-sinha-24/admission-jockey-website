@@ -10,6 +10,7 @@ import store from '../redux/store';
 import Search from './pages/searchpage/Search'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { getCollegeList } from '../redux/Action/PropertyAction'
+import {getUniversityCourseWeb} from '../redux/Action/universityCourseAction'
 
 function App() {
   // console.log(import.meta.env.VITE_BASE_URL)
@@ -26,6 +27,7 @@ function App() {
   
   useEffect(()=>{
     dispatch(getCollegeList());
+    dispatch(getUniversityCourseWeb());
   },[])
 
   const ClearFilter = ()=>{
@@ -36,6 +38,10 @@ function App() {
 
 
   const college = useSelector(state=>state.property.property.colleges?.filter(item => item?.edu_type == "College"))
+  let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
+  const filteredcollege = useSelector(state=>state?.university?.college)
+  let universityCourses = [...new Set(course)]
+  console.log(universityCourses);
 
   const cityFilter = [...new Set(college
   ?.filter(item => (item?.property_district !== 'undefined' ? item.property_district : null))
@@ -111,11 +117,20 @@ function App() {
   }, [Type, City, State]);
 
   useEffect(()=>{
-    if(search || Type?.length > 0 || City?.length > 0 || State?.length > 0 ){
+    if(SelectedCourse != ''  && !search && Type?.length === 0 && City?.length === 0 && State?.length === 0 ){
+      
+      const mergedResult = [...new Set(filteredcollege)];
+      setFilteredList(mergedResult);
+      
+    }
+  },[SelectedCourse,filteredcollege])
+
+  useEffect(()=>{
+    if(SelectedCourse ||search || Type?.length > 0 || City?.length > 0 || State?.length > 0 ){
       // filter applied
       setIsFilterApplied(true);
 
-    }else if (!search && Type?.length === 0 && City?.length === 0 && State?.length === 0) {
+    }else if (!SelectedCourse && !search && Type?.length === 0 && City?.length === 0 && State?.length === 0) {
       // filter not applied
       setIsFilterApplied(false);
 
@@ -123,13 +138,19 @@ function App() {
       setIsFilterApplied(false);
 
     }
-  },[Type, City, State, search])
+  },[Type, City, State, search, SelectedCourse])
 
   return (
       <BrowserRouter>
         <ToastContainer />
         <Routes>
-          <Route path='/' element={<Home search={search} setSearch={setSearch} />}></Route>
+          <Route path='/' element={
+          <Home 
+            search={search} 
+            setSearch={setSearch}
+            SelectedCourse={SelectedCourse}
+            setSelectedCourse={setSelectedCourse} 
+          />}/>
           <Route path='/Login' element={<Login />} />
           <Route path='/Signin' element={<Signin />} />
           <Route path='/Search' element={
@@ -149,6 +170,8 @@ function App() {
             cityFilter={cityFilter}
             stateFilter={stateFilter}
             typeFilter={typeFilter}
+            SelectedCourse={SelectedCourse}
+            setSelectedCourse={setSelectedCourse}
           />} />
         </Routes>
       </BrowserRouter>

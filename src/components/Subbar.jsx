@@ -5,13 +5,17 @@ import img3 from "../assets/images/kolkata.jpeg"
 import img4 from "../assets/images/pune.jpeg"
 import naac from "../assets/images/naac.png"
 import filterIcon from '../assets/filter icon.png'
+import { useDispatch } from 'react-redux'
+import { getCollegesForSelectedCourse } from '../../redux/Action/universityCourseAction'
 // import { city,state,collegeType } from '../data/filterCategory/FilterCategory'
 
-function Subbar({ search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter }) {
+function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter }) {
    
     // const [show , setShow] = useState(false)
     // const [ width , setWidth] = useState("slides")
     
+
+    const dispatch = useDispatch();
 
     var span = <i className="fa-solid fa-angle-down"></i>
     var span1 = <i className="fa-solid fa-angle-up"></i>
@@ -22,6 +26,7 @@ function Subbar({ search, setSearch, Fees, setFees, City, setCity, State, setSta
 
   function Handlecity (event)  {
     setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -34,6 +39,7 @@ function Subbar({ search, setSearch, Fees, setFees, City, setCity, State, setSta
 
   function HandleState (event)  {
     setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -46,6 +52,7 @@ function Subbar({ search, setSearch, Fees, setFees, City, setCity, State, setSta
 
   function Handletype (event)  {
     setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -115,11 +122,15 @@ function Subbar({ search, setSearch, Fees, setFees, City, setCity, State, setSta
         </div>
         <div className='rightside'>
             <form action="" onSubmit={handlesubmit}>
-                <select name="" id="" value={SelectedCourse} onChange={(e)=>{setSelectedCourse(e.target.value)}}>
+                <select name="" id="" value={SelectedCourse} onChange={(e)=>{SelectedCourse!=''&&ClearFilter();setSearch('');setSelectedCourse(e.target.value); dispatch(getCollegesForSelectedCourse(e.target.value))}}>
                     <option value=""> Select Course</option>
-                    <option value="Course1"> Course1</option>
+                    {
+                        universityCourses?.length>0 &&
+                        universityCourses?.map(course=><option value={course}> {course}</option>)
+                    }
+                    {/* <option value="Course1"> Course1</option>
                     <option value="course2">Course2</option>
-                    <option value="Course3">Course3</option>
+                    <option value="Course3">Course3</option> */}
                 </select>
             </form>
             <div>
