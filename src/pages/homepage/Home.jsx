@@ -16,23 +16,14 @@ import Content from '../../components/Content'
 import Lorem from '../../components/Lorem'
 import Footer from '../../components/Footer'
 import New from '../../components/New'
+import { useSelector } from 'react-redux'
 
-function Home() {
+function Home({search, setSearch, SelectedCourse , setSelectedCourse}) {
   
   const [isOpen, setIsOpen] = useState(false);
+  const universityCourses = useSelector(state=>state?.university?.universityCourses)
 
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
 
-  // function afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = '#f00';
-  // }
-
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
   const handleOpenModal = () => {
     setIsOpen(!isOpen)
   };
@@ -41,24 +32,32 @@ function Home() {
       {isOpen && (
         <Modal
           isOpen={isOpen}
+          setIsOpen={setIsOpen}
           onRequestClose={handleOpenModal}
         />
       )}
       <Bar/>
       <Nav/>
-      <Section1/>
-      <Section2/>
+      <Section1 
+        search={search}
+        setSearch={setSearch}
+      />
+      <Section2 
+        universityCourses={universityCourses}
+        SelectedCourse={SelectedCourse}
+        setSelectedCourse={setSelectedCourse}
+      />
       <Slider1/>
       <Slider2/>
       <Places/>
       <Partner
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        />
+      />
       <Slider3
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        />
+      />
       <Slider4/>
       <Phone2/>
       <Content/>

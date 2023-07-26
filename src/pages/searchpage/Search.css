@@ -239,11 +239,15 @@
   }
   .city ,.college , .state {
     width: 100%;
-    height: 200px;
+    max-height: 200px;
     overflow-y: auto;
     /* border-right: none; */
-    padding: 0px 20px 10px 20px ;
-    margin: 10px 0;
+    padding: 0px 20px 40px 20px ;
+    margin: 10px 0 ;
+    line-height: 20px;
+  }
+  .college{
+    padding-top: 15px;
   }
   .filtersapplied::-webkit-scrollbar,.filter-container .city::-webkit-scrollbar,.filter-container .state::-webkit-scrollbar {
     width: 6px;
@@ -599,3 +603,12 @@
     
   
   }
+
+  
+.no-colleges{
+  margin: 40px;
+  padding: 40px;
+  text-align: center;
+  color: grey;
+  font-size: xx-large;
+}

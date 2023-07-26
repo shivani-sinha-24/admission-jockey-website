@@ -3,24 +3,32 @@ import Modal from "react-modal";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import "./modal.css";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const modal = ({ isOpen, onRequestClose, name }) => {
+const modal = ({ isOpen, onRequestClose, name,setIsOpen }) => {
+    const notify = () => toast("Wow so easy!");
     const validationSchema = Yup.object({
         name:Yup.string().required('Name is a required field'),
         email: Yup.string().email().required('Email is a required field'),
-        phonenumber: Yup.number().required('Phone number is a required field').positive().integer(),
+        phone_number: Yup.number().required('Phone number is a required field').positive().integer(),
         course: Yup.string().required('Please select a course'),
     })
     const formik = useFormik({
         initialValues:{
             name:'',
             email:'',
-            phonenumber:'',
+            phone_number:'',
             course:''
         },
         validationSchema:validationSchema,
         onSubmit: values=>{
-            console.log(values);
+            axios.post(`${import.meta.env.VITE_BASE_URL}/createWebQueryList`,values)
+            .then(res=>{
+                setIsOpen(false);
+                setTimeout(()=>{toast.success(res?.data?.message)},500)
+            })
+            .catch(err=>console.log(err))
         }
     })
   return (
@@ -62,20 +70,26 @@ const modal = ({ isOpen, onRequestClose, name }) => {
                 {
                     formik.errors.email && formik.touched.email && <p style={{color:'red'}}>{formik.errors.email}</p>
                 }
-                <label htmlFor="phonenumber">
+                <label htmlFor="phone_number">
                     Phone Number
                 </label>
-                <input type="text" onBlur={formik.handleBlur} name="phonenumber" onChange={formik.handleChange} value={formik.values.phonenumber} id="phonenumber"  placeholder="Enter Phone Number *"/>
+                <input type="text" onBlur={formik.handleBlur} name="phone_number" onChange={formik.handleChange} value={formik.values.phone_number} id="phone_number"  placeholder="Enter Phone Number *"/>
                 {
-                    formik.errors.phonenumber && formik.touched.phonenumber && <p style={{color:'red'}}>{formik.errors.phonenumber}</p>
+                    formik.errors.phone_number && formik.touched.phone_number && <p style={{color:'red'}}>{formik.errors.phone_number}</p>
                 }
-                <label for="course">Select Course</label>
+                <label htmlFor="course">Select Course</label>
                 <select name="course" id="course" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.course}>
                     <option value="">Select Course</option>
-                    <option value="Course 1">Course 1</option>
-                    <option value="Course 2">Course 2</option>
-                    <option value="Course 3">Course 3</option>
-                    <option value="Course 4">Course 4</option>
+                    <option value="MCA">MCA</option>
+                    <option value="MBA">MBA</option>
+                    <option value="M.Com">M.Com</option>
+                    <option value="M.Sc">M.Sc</option>
+                    <option value="M.A">M.A</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="B.Com">B.Com</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="B.A">B.A</option>
                 </select>
                 {
                     formik.errors.course && formik.touched.course && <p style={{color:'red'}}>{formik.errors.course}</p>

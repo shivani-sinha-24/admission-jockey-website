@@ -1,5 +1,5 @@
 import API from "../../services/API";
-import { FAILURE_COLLEGE_LIST, SUCCESS_COLLEGE_LIST, GET_COLLEGE_LIST } from "../Constants/Constants";
+import { FAILURE_COLLEGE_LIST, SUCCESS_COLLEGE_LIST, GET_COLLEGE_LIST, GET_UNIVERSITY_COURSE_LIST, SUCCESS_UNIVERSITY_COURSE_LIST, FAILURE_UNIVERSITY_COURSE_LIST } from "../Constants/Constants";
 import { ToastContainer, toast } from 'react-toastify';
 
 export const getCollegeList = () => async (dispatch) => {

@@ -5,17 +5,17 @@ import img3 from "../assets/images/kolkata.jpeg"
 import img4 from "../assets/images/pune.jpeg"
 import naac from "../assets/images/naac.png"
 import filterIcon from '../assets/filter icon.png'
-import { city,state,collegeType } from '../data/filterCategory/FilterCategory'
+import { useDispatch } from 'react-redux'
+import { getCollegesForSelectedCourse } from '../../redux/Action/universityCourseAction'
+// import { city,state,collegeType } from '../data/filterCategory/FilterCategory'
 
-function Subbar() {
+function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter }) {
    
     // const [show , setShow] = useState(false)
-    const [ Fees , setFees] = useState("0")
-    const [City , setCity]=useState([])
-    const [State , setState]=useState([])
-    const [Type , setType]=useState([])
-    const [ SelectedCourse , setSelectedCourse] = useState("")
     // const [ width , setWidth] = useState("slides")
+    
+
+    const dispatch = useDispatch();
 
     var span = <i className="fa-solid fa-angle-down"></i>
     var span1 = <i className="fa-solid fa-angle-up"></i>
@@ -25,6 +25,8 @@ function Subbar() {
  
 
   function Handlecity (event)  {
+    setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -36,6 +38,8 @@ function Subbar() {
   };
 
   function HandleState (event)  {
+    setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -47,6 +51,8 @@ function Subbar() {
   };
 
   function Handletype (event)  {
+    setSearch('')
+    setSelectedCourse('')
     const { name, checked } = event.target;
 
     if (checked) {
@@ -85,19 +91,26 @@ function Subbar() {
 
  function removefilter (value){
     setCity(City.filter((type) => type !== value));
+    if(search){
+    setSearch('')
+    // console.log('yyyyyyyyyyyy');
+    }
     
  }
 
  function removefilter1 (value){
     setState(State.filter((type) => type !== value));
+    if(search){
+    setSearch('')
+    // console.log('yyyyyyyyyyyy');
+    }
  }
  function removefilter2 (value){
     setType(Type.filter((type) => type !== value));
- }
- const ClearFilter = ()=>{
-    setCity([]);
-    setState([]);
-    setType([]);
+    if(search){
+    setSearch('')
+    // console.log('yyyyyyyyyyyy');
+    }
  }
 
   return (
@@ -109,11 +122,15 @@ function Subbar() {
         </div>
         <div className='rightside'>
             <form action="" onSubmit={handlesubmit}>
-                <select name="" id="" value={SelectedCourse} onChange={(e)=>{setSelectedCourse(e.target.value)}}>
-                    <option value="Course"  selected> Select Course</option>
-                    <option value="Course1"> Course1</option>
+                <select name="" id="" value={SelectedCourse} onChange={(e)=>{SelectedCourse!=''&&ClearFilter();setSearch('');setSelectedCourse(e.target.value); dispatch(getCollegesForSelectedCourse(e.target.value))}}>
+                    <option value=""> Select Course</option>
+                    {
+                        universityCourses?.length>0 &&
+                        universityCourses?.map(course=><option value={course}> {course}</option>)
+                    }
+                    {/* <option value="Course1"> Course1</option>
                     <option value="course2">Course2</option>
-                    <option value="Course3">Course3</option>
+                    <option value="Course3">Course3</option> */}
                 </select>
             </form>
             <div>
@@ -168,7 +185,7 @@ function Subbar() {
                             <h3>City</h3>
                             <div>
                             {
-                                city?.sort().map(city=>
+                                city?.sort().map((city,index)=>
                                 <>
                                     <input type="checkbox" id={city} name={city} onChange={Handlecity} checked= {City.includes(city)}  />
                                     <label htmlFor={city}>{city}</label> <br />
@@ -206,254 +223,75 @@ function Subbar() {
                         }
                     </div>
                     </div>
-                    <button type='submit' onClick={()=>handlesubmit()}>Apply Filters</button>
+                    {/* <button type='submit' onClick={()=>handlesubmit()}>Apply Filters</button> */}
                 </form>
             </div>
         }
         <div className='manage2' style={{width:viewFilters?'80%':'100%'}}>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
+            {
+                collegeList?.length>0
+                ?
+                collegeList.map(college =>
+                    <div className='slides' id={college?._id} key={college?._id}>
+                        <div className='imgages'>
+                            <div className='img1'>
+                                <img src={img1} alt="" />
+                            </div>
+                            <div className='img2'>
+                                <img src={img2} alt="" />
+                                <img src={img3} alt="" />
+                                <div className='img3'>
+                                    <p>View All</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className='content'>
-                    <div className="content-top">
-                    <h1>University of Petroleum and Energy Studies </h1>
-                    <span>(Dehradun , Uttarakhand)</span>
-                    </div>
-                    <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
+                        <div className='content'>
+                            <div className="content-top">
+                            <h1>{college?.name||'University of Petroleum and Energy Studies '}</h1>
+                            <span>
+                                (
+                                    { college?.property_district } {college?.property_district && college?.property_statet && ' ,'} { college?.property_state }
+                                )
+                            </span>
+                            </div>
+                            <div className='content1'>
+                                {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
+                                <button>
+                                <i className="fa-solid fa-star"></i><span>Student Choice</span>
+                                </button>
+                                <div className='content12'>
+                                    <div>
+                                        <span>Approved by:</span>
+                                        <img src={naac} alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='content2'>
+                                <h2>BCA ₹15,00,000</h2>
+                                <div className="buttons">
+                                    <button>Compare</button>
+                                    <button>Apply Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className='content2'>
-                        <h2>BCA ₹15,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
+                    )
+                :
+                <div className='no-colleges'>No colleges found</div>
+            }
+            {
+                collegeList?.length > 0 &&
+                <div className='lower'>
+                    <div className='lower2'>
+                        <button> Next page <i className="fa-solid fa-arrow-right"></i> </button>
+                    </div>
+                    <div className='lower1'>
+                        <span>Page</span>
+                        <button>1</button>
+                        <span>of 200</span>
                     </div>
                 </div>
-            </div>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='content'>
-                    <h1>Uttaranchal Institute of Technology </h1>
-                    <span>(Dehradun , Uttarakhand)</span>
-                    <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className='content2'>
-                        <h2>BCA ₹6,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='content'>
-                    <h1>Graphic Era University </h1>
-                    <span>(Dehradun , Uttarakhand)</span>
-                    <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className='content2'>
-                        <h2>BCA ₹6,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='content'>
-                    <h1>Woxen University Hyderabad </h1>
-                    <span>(Hyderabad , Andrapradesh)</span>
-                    <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className='content2'>
-                        <h2>BCA ₹6,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='content'>
-                    <h1>K.R. Mangalam University </h1>
-                    <span>(Gurugaon , harayana)</span>
-                    <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div className='content2'>
-                        <h2>BCA ₹6,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='slides'>
-                <div className='imgages'>
-                    <div className='img1'>
-                        <img src={img1} alt="" />
-                    </div>
-                    <div className='img2'>
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <div className='img3'>
-                            <p>View All</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='content'>
-                    <h1>Sai Group of Institutions </h1>
-                    <span>(Dehradun , Uttarakhand)</span>
-                        <div className='content1'>
-                        {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                        <button>
-                        <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                        </button>
-                        <div className='content12'>
-                            <div>
-                                <span>Approved by:</span>
-                                <img src={naac} alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='content2'>
-                        <h2>BCA ₹4,00,000</h2>
-                        <div className="buttons">
-                            <button>Compare</button>
-                            <button>Apply Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='lower'>
-                <div className='lower2'>
-                    <button> Next page <i className="fa-solid fa-arrow-right"></i> </button>
-                </div>
-                <div className='lower1'>
-                    <span>Page</span>
-                    <button>1</button>
-                    <span>of 200</span>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </>
