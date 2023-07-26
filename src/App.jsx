@@ -37,7 +37,7 @@ function App() {
   }
 
 
-  const college = useSelector(state=>state.property.property.colleges?.filter(item => item?.edu_type == "College"))
+  const college = useSelector(state=>state.property.property.colleges)
   let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
   const filteredcollege = useSelector(state=>state?.university?.college)
   let universityCourses = [...new Set(course)]

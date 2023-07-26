@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Searchnav({search,setSearch,setState,setCity,setType}) {
   
@@ -10,7 +11,9 @@ function Searchnav({search,setSearch,setState,setCity,setType}) {
     <div className='section10'>
 
         <div className='ajlogo'>
+          <Link to={'/'}>
             <img src="https://admissionjockey.com/assets/images/admission-jockey-logo1-main.png" alt="" />
+          </Link>
         </div>
 
         <div className='searchform'>
