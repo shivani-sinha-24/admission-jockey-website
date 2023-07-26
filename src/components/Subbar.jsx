@@ -235,7 +235,8 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                     <div className='slides' id={college?._id} key={college?._id}>
                         <div className='imgages'>
                             <div className='img1'>
-                                <img src={img1} alt="" />
+                                {/* <img src={img1} alt="" /> */}
+                                <img src={`${import.meta.env.VITE_BASE_URL}/${college?.image}`} alt="" />
                             </div>
                             <div className='img2'>
                                 <img src={img2} alt="" />
@@ -250,7 +251,7 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                             <h1>{college?.name||'University of Petroleum and Energy Studies '}</h1>
                             <span>
                                 (
-                                    { college?.property_district } {college?.property_district && college?.property_statet && ' ,'} { college?.property_state }
+                                    { college?.property_district } {college?.property_district && college?.property_state && ' ,'} { college?.property_state }
                                 )
                             </span>
                             </div>
