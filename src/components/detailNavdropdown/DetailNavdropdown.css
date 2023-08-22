@@ -1,0 +1,46 @@
+.detail-page .detail-nav-dropdown{
+    padding: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    /* border-top: 2px solid rgb(50, 8, 87,0.5); */
+}
+.detail-page .detail-nav-dropdown div{
+    border-bottom: 2px solid rgb(50, 8, 87,0.2);
+    /* width: 50%; */
+    width: fit-content;
+}
+
+/* ***************************** HOVER CSS ***************************** */
+.detail-page .detail-nav-dropdown div:hover{
+    cursor: pointer;
+}
+
+/* ***************************** MEDIA QUERIES ***************************** */
+
+@media (min-width:900px)  and (max-width:1200px) {
+    /* lg screen */
+    .detail-page .detail-nav-dropdown{
+        padding: 0px 40px 10px 40px;
+    }
+}
+
+@media (min-width:700px)  and (max-width:899.99px) {
+    /* md screen */
+    .detail-page .detail-nav-dropdown{
+        padding: 5px 20px;
+    }
+}
+
+@media (min-width:500px)  and (max-width:699.99px) {
+    /* sm screen */
+    .detail-page .detail-nav-dropdown{
+        padding: 5px 20px;
+    }    
+}
+
+@media (min-width:100px)  and (max-width:499.99px) {
+    /* xs screen */
+    .detail-page .detail-nav-dropdown{
+        padding: 5px 20px;
+    }    
+}

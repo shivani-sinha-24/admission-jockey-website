@@ -1,0 +1,282 @@
+.detail-page .clg-img{
+    height: fit-content;
+    width: 100%;
+    padding: 0px 150px 80px 150px;
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    color: white;
+}
+.detail-page .clg-img::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(73, 58, 112, 0.5); Adjust the color and opacity here */
+    /* background: linear-gradient(to right, rgba(36, 18, 77, 0.98), rgba(73, 58, 112, 0.6)); */
+    background: linear-gradient(to right, rgb(50, 8, 87,1), rgba(73, 58, 112, 0.6));
+    z-index: -1;
+}
+.detail-page .clg-img::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+.detail-page .clg-img .clg-img-top{
+    width: 70%;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.detail-page .clg-img .clg-img-top .top-left,
+.detail-page .clg-img .clg-img-top .top-right{
+    margin: 80px 0;
+}
+.detail-page .clg-img .clg-img-top .top-left{
+    width: 20%;
+    border-radius: 5px;
+    padding: 30px 0;
+    background-color: white;
+}
+.detail-page .clg-img .clg-img-top .top-left img{
+    width: 100%;  
+    max-height: 100px;
+}
+.detail-page .clg-img .clg-img-top .top-right{
+    width: 70%;
+    padding: 0 80px 0 0;
+}
+.detail-page .clg-img .clg-img-top .top-right .p1{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.detail-page .clg-img .clg-img-top .top-right .p2{
+    font-size: 1.25rem;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.detail-page .clg-img .clg-img-btns{
+    width: 70%;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+
+}
+.detail-page .clg-img .clg-img-btns button{
+    width: 28%;
+    padding: 10px 50px;
+    border-radius: 3px;
+    border: none;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.detail-page .clg-img .clg-img-btns button.btn1{
+    display: flex;
+    gap: 8px;
+    background-color: white;
+    color: rgb(50, 8, 87,1);
+}
+.detail-page .clg-img .clg-img-btns button.btn1 i.fa-solid{
+    color:orangered;
+}
+.detail-page .clg-img .clg-img-btns button.btn2{
+    background-color: orangered;
+    color: white;
+}
+
+
+/* **************************************** HOVER CSS **************************************** */
+
+.detail-page .clg-img .clg-img-btns button:hover{
+    cursor: pointer;
+}
+
+
+/* **************************************** MEDIA QUERIES **************************************** */
+
+@media (min-width:1200px){
+/* xl screen */
+
+}
+
+@media (min-width:900px)  and (max-width:1200px) {
+/* lg screen */
+    .detail-page .clg-img{
+        padding: 40px;
+    }
+    .detail-page .clg-img .clg-img-top{
+        width: 100%;
+        display: flex;
+        gap: 35px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .detail-page .clg-img .clg-img-btns{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+}
+
+@media (min-width:700px)  and (max-width:899.99px) {
+    /* md screen */
+    .detail-page .clg-img{
+        padding: 20px;
+    }
+    .detail-page .clg-img .clg-img-top{
+        width: 100%;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .detail-page .clg-img .clg-img-top .top-left,
+    .detail-page .clg-img .clg-img-top .top-right{
+        margin: 40px 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-left{
+        width: 20%;
+        border-radius: 5px;
+        padding: 30px 0;
+        background-color: white;
+    }
+    .detail-page .clg-img .clg-img-top .top-left img{
+        width: 100%;  
+    }
+    .detail-page .clg-img .clg-img-top .top-right{
+        width: 70%;
+        padding: 0 30px 0 0;
+    }
+    .detail-page .clg-img .clg-img-btns{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .detail-page .clg-img .clg-img-btns button{
+        width: 30%;
+        padding: 10px 50px;
+    }
+    .detail-page .clg-img .clg-img-btns button.btn1{
+        gap: 10px;
+    }
+
+}
+
+@media (min-width:500px)  and (max-width:699.99px) {
+    /* sm screen */
+    .detail-page .clg-img{
+        padding:20px;
+    }
+    .detail-page .clg-img .clg-img-top{
+        width: 100%;
+        flex-direction: column;
+    }
+    .detail-page .clg-img .clg-img-top .top-left,
+    .detail-page .clg-img .clg-img-top .top-right{
+        margin: 10px 0 0 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-left{
+        width: 100%;
+        padding: 0px;
+    }
+    .detail-page .clg-img .clg-img-top .top-left img{
+        border-radius: 3px;
+        width: 100%;  
+        height: 100px;
+    }
+    .detail-page .clg-img .clg-img-top .top-right{
+        width: 100%;
+        padding: 0;
+        margin:0 0 20px 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-right .p1{
+        font-size: 2.05rem;
+        margin:0 0 20px 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-right .p2{
+        font-size: 1.055rem;
+        gap: 10px;
+        margin: 20px 0;
+    }
+    .detail-page .clg-img .clg-img-btns{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12.5px;
+        margin-bottom: 20px;
+    }
+    .detail-page .clg-img .clg-img-btns button{
+        width: 100%;
+    }
+    .detail-page .clg-img .clg-img-btns button.btn1{
+        gap: 10px;
+    }
+    
+}
+
+@media (min-width:100px)  and (max-width:499.99px) {
+    /* xs screen */
+    .detail-page .clg-img{
+        padding:20px 20px 80px 20px;        
+    }
+    .detail-page .clg-img .clg-img-top{
+        width: 100%;
+        flex-direction: column;
+    }
+    .detail-page .clg-img .clg-img-top .top-left,
+    .detail-page .clg-img .clg-img-top .top-right{
+        margin: 10px 0 0 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-left{
+        width: 100%;
+        padding: 0px;
+    }
+    .detail-page .clg-img .clg-img-top .top-left img{
+        border-radius: 3px;
+        width: 100%;  
+        height: 100px;
+    }
+    .detail-page .clg-img .clg-img-top .top-right{
+        width: 100%;
+        padding: 0;
+        margin:0 0 20px 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-right .p1{
+        font-size: 2.05rem;
+        margin:0 0 20px 0;
+    }
+    .detail-page .clg-img .clg-img-top .top-right .p2{
+        font-size: 1.055rem;
+        gap: 10px;
+        margin: 20px 0;
+    }
+    .detail-page .clg-img .clg-img-btns{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12.5px;
+        margin-bottom: 20px;
+    
+    }
+    .detail-page .clg-img .clg-img-btns button{
+        width: 100%;    
+    }
+    .detail-page .clg-img .clg-img-btns button.btn1{
+        gap: 10px;
+    }   
+    
+}
+    

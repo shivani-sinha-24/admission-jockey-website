@@ -1,0 +1,60 @@
+.detail-page .detail-main-content{
+    width: 100%;
+    color: black;
+    padding: 0px 150px 80px 150px;
+}
+.detail-page .detail-main-content .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+/* **************************************** HOVER CSS **************************************** */
+
+.detail-page .detail-main-content .top div.top-item:hover{
+    cursor: pointer;
+}
+
+
+/* **************************************** MEDIA QUERIES **************************************** */
+
+@media (min-width:1200px) {
+    /* xl screen */
+}
+
+@media (min-width:900px)  and (max-width:1199.99px) {
+    /* lg screen */
+    .detail-page .detail-main-content{
+        padding: 0 40px 40px 40px;
+    }
+
+}
+
+@media (min-width:700px)  and (max-width:899.99px) {
+    /* md screen */
+    .detail-page .detail-main-content{
+        margin-top: -40px;
+        padding: 0 40px 40px 40px;
+    }
+    
+}
+
+@media (min-width:500px)  and (max-width:699.99px) {
+    /* sm screen */
+    .detail-page .detail-main-content{
+        padding: 20px;
+    }
+    
+}
+
+@media (min-width:100px)  and (max-width:499.99px) {
+    /* xs screen */
+    .detail-page .detail-main-content{
+        margin-top: -60px;
+        padding: 20px;
+    }
+    
+}

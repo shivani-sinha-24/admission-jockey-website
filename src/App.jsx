@@ -11,6 +11,7 @@ import Search from './pages/searchpage/Search'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { getCollegeList } from '../redux/Action/PropertyAction'
 import {getUniversityCourseWeb} from '../redux/Action/universityCourseAction'
+import DetailPage from './pages/detailsPage/DetailPage'
 
 function App() {
   // console.log(import.meta.env.VITE_BASE_URL)
@@ -41,7 +42,7 @@ function App() {
   let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
   const filteredcollege = useSelector(state=>state?.university?.college)
   let universityCourses = [...new Set(course)]
-  console.log(universityCourses);
+
 
   const cityFilter = [...new Set(college
   ?.filter(item => (item?.property_district !== 'undefined' ? item.property_district : null))
@@ -173,6 +174,7 @@ function App() {
             SelectedCourse={SelectedCourse}
             setSelectedCourse={setSelectedCourse}
           />} />
+          <Route path='/detail/:clgid' element={<DetailPage/>} />
         </Routes>
       </BrowserRouter>
   )
