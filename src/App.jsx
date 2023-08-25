@@ -3,19 +3,22 @@ import './App.css'
 import Home from './pages/homepage/Home'
 import Login from './pages/loginpage/Login'
 import Signin from './pages/signinpage/Signin'
-import { Provider, useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import store from '../redux/store';
 import Search from './pages/searchpage/Search'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { getCollegeList } from '../redux/Action/PropertyAction'
 import {getUniversityCourseWeb} from '../redux/Action/universityCourseAction'
 import DetailPage from './pages/detailsPage/DetailPage'
+import ComparePage from './pages/comparePage/ComparePage'
 
 function App() {
-  // console.log(import.meta.env.VITE_BASE_URL)
+
   const dispatch = useDispatch()
+  
+  const compareClg = useSelector(state=>state?.university?.compareClg)
+  // Search Colleges state
   const [search, setSearch] = useState('');
   const [ Fees , setFees] = useState("0")
   const [City , setCity]=useState([])
@@ -25,12 +28,19 @@ function App() {
   const [filteredList,setFilteredList] = useState([]) 
   const [isFilterApplied,setIsFilterApplied] = useState(false)
   const [searchResult, setSearchResult] = useState([]);
+
+  // Compare Colleges states
+  const [compareMultiClg,setCompareMultiClg] = useState(true)
+  const [compareArray,setCompareArray] = useState(compareClg || [])
+  const [isCompareOpen, setIsCompareOpen] = useState(false)
+  const [clgIndex,setClgIndex] = useState()
   
   useEffect(()=>{
     dispatch(getCollegeList());
     dispatch(getUniversityCourseWeb());
   },[])
 
+  // Search Colleges related functions and logics
   const ClearFilter = ()=>{
     setCity([]);
     setState([]);
@@ -155,7 +165,15 @@ function App() {
           <Route path='/Login' element={<Login />} />
           <Route path='/Signin' element={<Signin />} />
           <Route path='/Search' element={
-          <Search 
+          <Search
+            clgIndex={clgIndex}
+            setClgIndex={setClgIndex}
+            compareArray={compareArray}
+            setCompareArray={setCompareArray}
+            isCompareOpen={isCompareOpen}
+            setIsCompareOpen={setIsCompareOpen}
+            compareMultiClg={compareMultiClg}
+            setCompareMultiClg={setCompareMultiClg}
             ClearFilter={ClearFilter}
             search={search} 
             setSearch={setSearch} 
@@ -175,6 +193,18 @@ function App() {
             setSelectedCourse={setSelectedCourse}
           />} />
           <Route path='/detail/:clgid' element={<DetailPage/>} />
+          <Route path='/compare' element={
+            <ComparePage
+              clgIndex={clgIndex}
+              setClgIndex={setClgIndex}
+              isCompareOpen={isCompareOpen}
+              setIsCompareOpen={setIsCompareOpen}
+              compareMultiClg={compareMultiClg}
+              setCompareMultiClg={setCompareMultiClg}
+              compareArray={compareArray}
+              setCompareArray={setCompareArray}
+            />} 
+          />
         </Routes>
       </BrowserRouter>
   )

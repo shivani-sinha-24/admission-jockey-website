@@ -1,0 +1,190 @@
+.modal-base {
+    top: 15%;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 75%;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+    box-shadow: 0px 0px 10px 5px rgba(51, 51, 51, 0.5);
+    color: rgb(50, 8, 87,1);
+    text-align: left;
+    border-radius: 5px;
+    cursor: default;
+}
+.overlay-base_after-open{
+    overflow-y: auto;
+    padding-bottom: 5%;
+}
+.modal-base_after-open {
+    opacity: 1;
+    transform: scale(1);
+}
+.modal-base_before-close {
+    transform: scale(.2);
+    opacity: 0;
+} 
+.overlay-base {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(66, 66, 66, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.overlay-base_after-open {
+    opacity: 1;
+}
+.overlay-base_before-close {
+    opacity: 0;
+}
+.compare-modal-top{
+    padding: 20px ;
+  font-size: larger;
+  font-weight: 500;
+}
+.compare-modal-search{
+    width: 100%;
+    padding:0px 20px 30px 20px ;
+}
+input.search-input{
+    width: 100%;
+    padding: 5px 10px;
+    border:1px solid grey;
+    border-radius: 5px;
+}
+input.search-input::placeholder{
+    font-size: 14px;
+}
+.compare-modal-bottom{
+    padding: 5px 20px 30px 20px;
+    background-color: #ece9e9;
+}
+.bottom-colleges{
+    padding: 20px 45px 30px 45px;
+}
+.compare-modal-bottom .row {
+    display: flex;
+    gap: 5px 35px;
+    flex-wrap: wrap;
+}
+.compare-modal-bottom .column{
+    background-color: white;
+    width: 48%;
+    margin-bottom: 10px;
+    height: fit-content; 
+    display: flex;
+    align-items: center;
+    gap: 22.5px;
+    padding: 10px 30px 10px 10px;
+    border: 1px solid white;
+}
+.compare-modal-bottom .row .column.selected{
+    border: 1px solid rgb(50, 8, 87,0.9);
+}
+.compare-modal-bottom .row .column.selected .circle{
+    border: 1px solid rgb(50, 8, 87,0.9);
+    background-color: rgb(50, 8, 87,0.9);
+}
+.compare-modal-bottom .row .column.selected .circle i{
+    display: block;
+}
+.compare-modal-bottom .column .circle{
+    width: 12%;
+    height: 47.5px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.compare-modal-bottom .column .circle i{
+    display: none;
+    color:white;
+}
+.compare-modal-bottom .column .logo{
+    width: 12.5%;
+    height: 60px;
+    background-color: white;
+    border: 1px solid grey;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.compare-modal-bottom .column .logo img{
+    width: 100%;
+    height: 100%;
+}
+.compare-modal-bottom .column .details{
+    width: 70%;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    color: rgb(7, 7, 252);
+}
+.compare-modal-bottom .column .details .d-middle{
+    font-size: small;
+    display: flex;
+    color: black;
+    align-items: center;
+    gap: 8px;
+}
+.compare-modal-bottom .column .details .d-bottom{
+    display: flex;
+    align-items: center;
+    gap: 22.5px;
+}
+.compare-modal-bottom .bottom-buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+.compare-modal-bottom .bottom-buttons button{
+    padding: 5px 10px;
+    font-size: medium;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+}
+.compare-modal-bottom .bottom-buttons :nth-child(1){
+    background-color:rgb(177, 177, 177) ;
+    color: black;
+}
+.compare-modal-bottom .bottom-buttons :nth-child(2){
+    color: white;
+    background-color:rgb(50, 8, 87,1); ;
+}
+
+/* ***************************** HOVER CSS ***************************** */
+
+.modal-base button:hover,
+.compare-modal-bottom .column .details:hover,
+.compare-modal-bottom .column .circle:hover,
+.compare-modal-bottom .column .logo:hover{
+    cursor: pointer;
+}
+.compare-modal-bottom .row .column:hover{
+    border: 1px solid rgb(50, 8, 87,0.5);
+}
+.compare-modal-bottom .row .column:hover .circle{
+    background-color: rgb(50, 8, 87,0.55);
+}
+.compare-modal-bottom .row .column:hover .circle i{
+    display: block;
+}
+.compare-modal-bottom .row .column.selected:hover{
+    border: 1px solid rgb(50, 8, 87,0.9);
+}
+.compare-modal-bottom .row .column.selected:hover .circle{
+    border: 1px solid rgb(50, 8, 87,0.9);
+    background-color: rgb(50, 8, 87,0.9);
+}
+.compare-modal-bottom .row .column.selected:hover .circle i{
+    display: block;
+}

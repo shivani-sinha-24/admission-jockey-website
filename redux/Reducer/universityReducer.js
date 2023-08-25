@@ -1,8 +1,9 @@
-import { SUCCESS_UNIVERSITY_COURSE_LIST, SUCCESS_COLLEGE_FOR_SELECTED_COURSE, } from "../Constants/Constants";
+import { SUCCESS_UNIVERSITY_COURSE_LIST, SUCCESS_COLLEGE_FOR_SELECTED_COURSE, SUCCESS_COMPARED_COLLEGE_LIST, } from "../Constants/Constants";
 
 let initState = {
     universityCourses: [],
-    college:[]
+    college:[],
+    compareClg :[]
 }
 
 const universityReducer = (state = initState, action) => {
@@ -17,6 +18,11 @@ const universityReducer = (state = initState, action) => {
                 ...state,
                 college :action.payload
             })
+        case SUCCESS_COMPARED_COLLEGE_LIST:
+        return ({
+            ...state,
+            compareClg: action.payload
+        });
         default:
             return state;
     }

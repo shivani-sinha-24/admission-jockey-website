@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 import { getCollegesForSelectedCourse } from '../../redux/Action/universityCourseAction'
 // import { city,state,collegeType } from '../data/filterCategory/FilterCategory'
 
-function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter }) {  
+function Subbar({compareMultiClg,setCompareMultiClg,compareArray, setCompareArray, universityCourses, search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter, isOpen, setIsOpen }) {  
 
     const dispatch = useDispatch();
 
@@ -96,7 +96,7 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                         <option value=""> Select Course</option>
                         {
                             universityCourses?.length>0 &&
-                            universityCourses?.map(course=><option value={course}> {course}</option>)
+                            universityCourses?.map((course,index)=><option key={index+1} value={course}> {course}</option>)
                         }
                         {/* <option value="Course1"> Course1</option>
                         <option value="course2">Course2</option>
@@ -156,10 +156,10 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                                 <div>
                                 {
                                     city?.sort().map((city,index)=>
-                                    <>
+                                    <div key={index+1}>
                                         <input type="checkbox" id={city} name={city} onChange={Handlecity} checked= {City.includes(city)}  />
                                         <label htmlFor={city}>{city}</label> <br />
-                                    </>
+                                    </div>
                                     )
                                 }
                                 </div>
@@ -170,11 +170,11 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                                 <h3>State</h3>
                                 <div>
                                 {
-                                    state?.sort().map(state=>
-                                        <>
+                                    state?.sort().map((state,index)=>
+                                        <div key={index+1}>
                                         <input type="checkbox" id={state} name={state} onChange={HandleState} checked= {State.includes(state)}  />
                                         <label htmlFor={state}>{state}</label> <br />
-                                        </>
+                                        </div>
                                     )
                                 }
                                 </div>
@@ -184,11 +184,11 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                         <h3>College type</h3>
                         <div>
                             {
-                                collegeType?.map(type=>
-                                    <>
+                                collegeType?.map((type,index)=>
+                                    <div key={index+1}>
                                     <input type="checkbox" id={type} name={type} onChange={Handletype} checked= {Type.includes(type)}  />
                                     <label htmlFor={type}>{type}</label> <br />
-                                    </>
+                                    </div>
                                 )
                             }
                         </div>
@@ -240,7 +240,13 @@ function Subbar({ universityCourses, search, setSearch, Fees, setFees, City, set
                                 <div className='content2'>
                                     <h2>BCA ₹15,00,000</h2>
                                     <div className="buttons">
-                                        <button>Compare</button>
+                                        <button onClick={(e)=>{
+                                            e.preventDefault();
+                                            const updatedCompareArray = [...compareArray, college];
+                                            setCompareArray(updatedCompareArray);
+                                            setCompareMultiClg(true);
+                                            setIsOpen(true);
+                                        }}>Compare</button>
                                         <button>Apply Now</button>
                                     </div>
                                 </div>

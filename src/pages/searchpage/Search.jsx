@@ -7,16 +7,38 @@ import Footer from '../../components/Footer'
 import './Search.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCollegeList } from '../../../redux/Action/PropertyAction'
+import Modal from '../../modals/CompareModal/CompareModal'
 
-function Search({search, setSearch, Fees, setFees, City, setCity, Type, setType, State, setState, collegeList, cityFilter, stateFilter, typeFilter, ClearFilter,SelectedCourse , setSelectedCourse}) {
+function Search({clgIndex,setClgIndex,compareArray,setCompareArray,isCompareOpen, setIsCompareOpen,compareMultiClg,setCompareMultiClg,search, setSearch, Fees, setFees, City, setCity, Type, setType, State, setState, collegeList, cityFilter, stateFilter, typeFilter, ClearFilter,SelectedCourse , setSelectedCourse}) {
 
   let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
   let universityCourses = [...new Set(course)]
 
+  
+  const handleOpenModal = () => {
+    setIsCompareOpen(!isCompareOpen)
+    setCompareArray([]);
+  };
+
   return (
     <div className='search-page'>
+        {isCompareOpen && (
+          <Modal
+            clgIndex={clgIndex}
+            setClgIndex={setClgIndex}
+            compareMultiClg={compareMultiClg}
+            setCompareMultiClg={setCompareMultiClg}
+            isOpen={isCompareOpen}
+            setIsOpen={setIsCompareOpen}
+            onRequestClose={handleOpenModal}
+            compareArray={compareArray}
+            setCompareArray={setCompareArray}
+          />
+        )}
         <Searchupnav/>
         <Searchnav 
+          compareMultiClg={compareMultiClg}
+          setCompareMultiClg={setCompareMultiClg}
           search={search}
           setState={setState}
           setSearch={setSearch}
@@ -25,6 +47,12 @@ function Search({search, setSearch, Fees, setFees, City, setCity, Type, setType,
           ClearFilter={ClearFilter}        
         />
         <Subbar
+          compareMultiClg={compareMultiClg}
+          setCompareMultiClg={setCompareMultiClg}
+          compareArray={compareArray}
+          setCompareArray={setCompareArray}
+          isOpen={isCompareOpen}
+          setIsOpen={setIsCompareOpen}
           universityCourses={universityCourses}
           ClearFilter={ClearFilter}
           search={search}

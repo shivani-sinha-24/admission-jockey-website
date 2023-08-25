@@ -1,0 +1,153 @@
+.compare-page .comapre-main-content{
+    width: 100%;
+    margin-bottom: 1.5rem!important;
+    padding: 0 20px 20px 20px;
+}
+.compare-page .comapre-main-content .college-detail,
+.compare-page .comapre-main-content .review-detail,
+.compare-page .comapre-main-content .course-detail{
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #d0d0d0;
+    border-right: none !important;
+    border-bottom: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+}
+/* .compare-page .comapre-main-content .college-detail :nth-child(4),
+.compare-page .comapre-main-content .course-detail :nth-child(4),
+.compare-page .comapre-main-content .review-detail :nth-child(4){
+    border-right: none !important;
+} */
+.compare-page .comapre-main-content .college-detail .clg,
+.compare-page .comapre-main-content .course-detail .clg,
+.compare-page .comapre-main-content .review-detail .clg{
+    width: 25%;
+    border-right: 1px solid #d0d0d0;
+    padding: 1rem;
+}
+.compare-page .comapre-main-content .college-detail .clg{
+    min-height: 340px;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info{
+    height: 100%;
+    width: 100%;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .top{
+    margin: 0 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: medium;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .top .left{
+    font-size: 15px;
+    color: #0d6efd;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .top .left :nth-child(2){
+    color: rgb(56, 56, 56);
+    font-size: 14px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .middle{
+    height: 60%;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0.8rem;
+    padding: 10px;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .middle .logo{
+    height: 50%;
+    width: 27.5%;
+    padding: 3px;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.compare-page .comapre-main-content .college-detail .clg .college-info .bottom{
+    padding: 1rem 0;
+}
+.compare-page .comapre-main-content .course-detail .clg .detail,
+.compare-page .comapre-main-content .college-detail .clg .college-info .bottom .detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(56, 56, 56);
+    font-size: 14px;
+    width: 100%;
+}
+.compare-page .comapre-main-content .college-detail .clg .add-new{
+    border: 1px dashed #050505;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0 1.2rem;
+}
+.compare-page .comapre-main-content .college-detail .clg .add-new .add-icon{    
+    display: inline-block;
+    background: #d0d0d0;
+    margin: 0 0 15px 0;
+    padding: 8px 15px;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.compare-page .comapre-main-content .course-detail .clg{
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 1rem;
+}
+.compare-page .comapre-main-content .course-detail .clg .bottom .detail{
+    font-size: smaller;
+    margin-bottom: 2.5px;
+    align-items: flex-end;
+}
+.compare-page .comapre-main-content .course-detail .clg .bottom .detail :nth-child(1){
+    width: 55%;
+}
+.compare-page .comapre-main-content .course-detail .clg .bottom .detail :nth-child(2){
+    width: 45%;
+    text-align: right;
+}
+.compare-page .comapre-main-content .review-detail .clg{
+    min-height: 120px;
+}
+.compare-page .comapre-main-content .heading{
+    padding: 6px;
+    border: 1px solid #d0d0d0;
+    text-align: center;
+    font-size: medium;
+    color: rgb(50, 8, 87,1);
+    background: #f1f5f6;
+}
+.compare-page .comapre-main-content .review-detail .clg{
+    padding-top: 30px;
+    text-align: center;
+}
+.compare-page .comapre-main-content .review-detail .clg .top{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    color: rgb(50, 8, 87,1);
+    font-weight: bold;
+}
+.compare-page .comapre-main-content .review-detail .clg .top :nth-child(1){
+    font-size: x-large;
+}
+.compare-page .comapre-main-content .review-detail .clg .bottom{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}

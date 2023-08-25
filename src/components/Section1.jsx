@@ -15,7 +15,7 @@ function Section1({search,setSearch}) {
             </div>
             <form action="">
                 <input type="text" placeholder="Search..." value={search} onChange={e=>setSearch((e.target.value).trim())}/>
-                <button onClick={e=>{e.preventDefault();search && navigate('/search')}}><i className="fa-solid fa-magnifying-glass"></i></button>
+                <button onClick={e=>{e.preventDefault(); navigate('/search')}}><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div className="subsec12">
