@@ -11,7 +11,7 @@ export const getUniversityCourseWeb = () => async (dispatch) => {
         dispatch({
             type: FAILURE_UNIVERSITY_COURSE_LIST
         });
-        toast.error(error?.message)
+        // toast.error(error?.message)
     }
 };
 
@@ -26,7 +26,7 @@ export const getCollegesForSelectedCourse = (course) => async (dispatch) => {
         dispatch({
             type: FAILURE_COLLEGE_FOR_SELECTED_COURSE
         });
-        toast.error(error?.message)
+        // toast.error(error?.message)
     }
 };
 
@@ -34,13 +34,11 @@ export const getWebCompareCollegeList = (value) => async (dispatch) => {
     try {
         dispatch({ type: GET_COMPARED_COLLEGE_LIST });
         const { data } = await API.post(`/getWebCompareCollegeList`,value);
-        // console.log('data :',data);
         dispatch({ type: SUCCESS_COMPARED_COLLEGE_LIST, payload: data });
     } catch (error) {
-        console.log(error, "error")
         dispatch({
             type: FAILURE_COMPARED_COLLEGE_LIST
         });
-        toast.error(error?.message)
+        // toast.error(error?.message)
     }
 };
