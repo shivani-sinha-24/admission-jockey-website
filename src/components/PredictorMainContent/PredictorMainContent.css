@@ -1,0 +1,214 @@
+.predictor-page .predictor-main-content{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+.predictor-page .predictor-main-content .top{
+    background-color: rgb(50, 8, 87,1);
+    color: white;
+    font-weight: 500;
+    padding: 8px;
+}
+.predictor-page .predictor-main-content .bottom{
+    width: 100%;
+    padding: 50px 100px 0px 100px;
+    font-size: smaller;
+    min-height: 86.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.predictor-page .predictor-main-content .bottom .error{
+    color: red;
+    font-size: small;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step h1{
+    font-weight: 1000 !important;
+    font-size: 36px !important;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .degrees,
+.predictor-page .predictor-main-content .bottom .bottom-step .courses,
+.predictor-page .predictor-main-content .bottom .bottom-step .specialization,
+.predictor-page .predictor-main-content .bottom .bottom-step .static-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 0 ;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .degrees{
+    gap: 25px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .courses{
+    gap: 15px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .specialization{
+    gap: 15px 10px;
+    font-size: medium;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .static-options{
+    gap: 15px;
+    font-size: medium;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .degree{
+    border: 2px solid #b9b9b9;
+    padding: 25px 0px;
+    border-radius: 15px;
+    box-shadow: 
+        10px 0px 15px rgba(255, 255, 255, 0.1), 
+        -10px 0px 15px rgba(200, 200, 200, 0.1),
+        0px 10px 15px rgba(200, 200, 200, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .option-selected{
+    border: 2px solid green !important;
+    font-weight: bold; 
+    color: rgb(0, 96, 0);
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .degrees .degree{
+    width: 14.50%;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .courses .degree{
+    height: 140px;
+    width: 10.5%;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .specialization .degree{
+    padding: 10px 20px;
+    width: fit-content;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step .static-options .degree{
+    padding: 35px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-button{
+    padding: 15px 0;
+    background-color: white;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    margin-top: 20px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-button button{
+    padding: 8px 0;
+    width: 30%;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 8px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-button button.prev{
+    background-color: white;
+    border: 1px solid rgb(50, 8, 87);
+    color: rgb(50, 8, 87,1);
+}
+.predictor-page .predictor-main-content .bottom .bottom-button button.next{
+    background-color: rgb(50, 8, 87, 0.9);
+    border: 1px solid rgb(50, 8, 87, 0.8);
+    color: white;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step img{
+    width: 40px; 
+    height: 40px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees{
+    flex-direction: column;
+    border: 1px solid #b9b9b9;
+    gap: 10px !important;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px !important;
+    margin-top: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .h2{
+    color: #0056d2;
+    font-size: 24px;
+    font-weight: bolder !important;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees  .desc{
+    font-size: 16px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees  .desc :nth-child(2){
+    font-weight: bold;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees  .desc2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;    
+    color: rgb(22, 177, 162);
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .gender-option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .gender-option .option{
+    border: 2px solid #b9b9b9;
+    padding: 25px 15px;
+    border-radius: 15px;
+    width: 42.5%;
+    box-shadow: 
+        10px 0px 15px rgba(255, 255, 255, 0.1),
+        -10px 0px 15px rgba(200, 200, 200, 0.1),
+        0px 10px 15px rgba(200, 200, 200, 0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 2.5px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .gender-err{
+    width: 85%;
+    color: red;
+    text-align: right;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .input-container{
+    padding: 8px 0;
+    width: 85%;
+    text-align: start !important;
+    font-size: medium;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .input-container.w50{
+    display: inline;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .input-container label{
+    width: 40%;
+    margin: 5px 0;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding: 2.5px 15px;
+    background-color: white;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .input-container input{
+    width: 100%;
+    padding: 10px 12.5px;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+}
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .input-container error{
+    width: 100%;
+}
+
+/* ************************************ HOVER CSS ************************************ */
+
+.predictor-page .predictor-main-content .bottom .bottom-step .degree:hover,
+.predictor-page .predictor-main-content .bottom .bottom-button button:hover,
+.predictor-page .predictor-main-content .bottom .bottom-step.last-step .degrees .gender-option .option:hover{
+    cursor: pointer;
+}
+.predictor-page .predictor-main-content .bottom .bottom-button button.prev:hover{
+    background-color:whitesmoke ;
+}
+.predictor-page .predictor-main-content .bottom .bottom-button button.next:hover{
+    background-color: rgb(50, 8, 87, 1);
+    border: 1px solid rgb(50, 8, 87, 1);
+}

@@ -1,0 +1,31 @@
+.predictor-page .predictor-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+.predictor-page .predictor-nav .p-nav-right button{
+    background-color: white;
+    border: 2px solid rgb(50, 8, 87,1);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(50, 8, 87,1);
+    font-weight: bold;
+    font-size: medium;
+    margin: 0 8px;
+}
+.predictor-page .predictor-nav .p-nav-right i.rotate{
+    transition: transform 0.5s ease; /* Adding a smooth transition effect */
+}
+.predictor-page .predictor-nav .p-nav-right i.rotate.rotate{
+    transform: rotate(360deg);
+}
+
+/* *********************** HOVER CSS *********************** */
+
+.predictor-page .predictor-nav .p-nav-right button:hover,
+.predictor-page .predictor-nav .p-nav-right i:hover,
+.predictor-page .predictor-nav .p-nav-left img:hover{
+    cursor: pointer;
+}

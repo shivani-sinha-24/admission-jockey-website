@@ -12,6 +12,8 @@ import { getCollegeList } from '../redux/Action/PropertyAction'
 import {getUniversityCourseWeb} from '../redux/Action/universityCourseAction'
 import DetailPage from './pages/detailsPage/DetailPage'
 import ComparePage from './pages/comparePage/ComparePage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import PredictorPage from './pages/predictorPage/PredictorPage'
 
 function App() {
 
@@ -217,6 +219,8 @@ function App() {
               setCompareArray={setCompareArray}
             />} 
           />
+          <Route path='/college-predictor' element={<PredictorPage/>}/>
+          {/* <Route path='*' element={ <ErrorPage/> }/> */}
         </Routes>
       </BrowserRouter>
   )
