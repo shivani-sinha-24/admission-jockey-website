@@ -13,10 +13,12 @@ import logo4 from "../assets/images/utranchellogo.jpeg"
 import.meta.env.VITE_BASE_URL
 import logo5 from "../assets/images/graphiceralogo.png"
 import { getCollegeList } from "../../redux/Action/PropertyAction";
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Slider4() {
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     const [collegeRows, setCollegeRows] = useState();
     const [collegeLogoRows, setCollegeLogoRows] = useState();
@@ -106,7 +108,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )

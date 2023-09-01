@@ -120,7 +120,7 @@ function Partner({isOpen,setIsOpen}) {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )

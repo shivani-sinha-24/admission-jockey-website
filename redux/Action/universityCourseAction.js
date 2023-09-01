@@ -1,5 +1,5 @@
 import API from "../../services/API";
-import { GET_UNIVERSITY_COURSE_LIST, SUCCESS_UNIVERSITY_COURSE_LIST, FAILURE_UNIVERSITY_COURSE_LIST, GET_COLLEGE_FOR_SELECTED_COURSE, SUCCESS_COLLEGE_FOR_SELECTED_COURSE, FAILURE_COLLEGE_FOR_SELECTED_COURSE } from "../Constants/Constants";
+import { GET_UNIVERSITY_COURSE_LIST, SUCCESS_UNIVERSITY_COURSE_LIST, FAILURE_UNIVERSITY_COURSE_LIST, GET_COLLEGE_FOR_SELECTED_COURSE, SUCCESS_COLLEGE_FOR_SELECTED_COURSE,FAILURE_COLLEGE_FOR_SELECTED_COURSE,GET_COMPARED_COLLEGE_LIST,SUCCESS_COMPARED_COLLEGE_LIST,FAILURE_COMPARED_COLLEGE_LIST } from "../Constants/Constants";
 import { toast } from 'react-toastify';
 
 export const getUniversityCourseWeb = () => async (dispatch) => {
@@ -28,4 +28,19 @@ export const getCollegesForSelectedCourse = (course) => async (dispatch) => {
         });
         toast.error(error?.message)
     }
-}
+};
+
+export const getWebCompareCollegeList = (value) => async (dispatch) => {
+    try {
+        dispatch({ type: GET_COMPARED_COLLEGE_LIST });
+        const { data } = await API.post(`/getWebCompareCollegeList`,value);
+        // console.log('data :',data);
+        dispatch({ type: SUCCESS_COMPARED_COLLEGE_LIST, payload: data });
+    } catch (error) {
+        console.log(error, "error")
+        dispatch({
+            type: FAILURE_COMPARED_COLLEGE_LIST
+        });
+        toast.error(error?.message)
+    }
+};

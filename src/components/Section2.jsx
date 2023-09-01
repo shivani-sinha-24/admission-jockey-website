@@ -24,7 +24,7 @@ Explore Courses
    
    < div className='section2'>
 {
-    universityCourses?.length &&
+    universityCourses?.length>0 &&
     universityCourses?.map(course=>
     <div className='subsec21'>
         <div className='subsec23'>
