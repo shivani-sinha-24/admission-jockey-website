@@ -12,6 +12,8 @@ import { getCollegeList } from '../redux/Action/PropertyAction'
 import {getUniversityCourseWeb} from '../redux/Action/universityCourseAction'
 import DetailPage from './pages/detailsPage/DetailPage'
 import ComparePage from './pages/comparePage/ComparePage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import PredictorPage from './pages/predictorPage/PredictorPage'
 
 function App() {
 
@@ -28,6 +30,7 @@ function App() {
   const [filteredList,setFilteredList] = useState([]) 
   const [isFilterApplied,setIsFilterApplied] = useState(false)
   const [searchResult, setSearchResult] = useState([]);
+  const [isUrlQuery,setUrlQuery] = useState(false)
 
   // Compare Colleges states
   const [compareMultiClg,setCompareMultiClg] = useState(true)
@@ -40,18 +43,18 @@ function App() {
     dispatch(getUniversityCourseWeb());
   },[])
 
+  const college = useSelector(state=>state.property.property.colleges)
+  let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
+  const filteredcollege = useSelector(state=>state?.university?.college)
+  let universityCourses = [...new Set(course)]
+
   // Search Colleges related functions and logics
   const ClearFilter = ()=>{
     setCity([]);
     setState([]);
     setType([]);
+    // navigate('/search')
   }
-
-
-  const college = useSelector(state=>state.property.property.colleges)
-  let course = useSelector(state=>state?.university?.universityCourses).map(course=>course.name)
-  const filteredcollege = useSelector(state=>state?.university?.college)
-  let universityCourses = [...new Set(course)]
 
 
   const cityFilter = [...new Set(college
@@ -81,6 +84,14 @@ function App() {
     }
   },[search])
   
+  useEffect(() => {
+    // Check if there are query parameters in the URL
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.toString()) {
+      setUrlQuery(true);
+    }
+  }, []);
+
   useEffect(() => {
     if(!search){
       if (Type?.length > 0 && City?.length === 0 && State?.length === 0) {
@@ -166,6 +177,9 @@ function App() {
           <Route path='/Signin' element={<Signin />} />
           <Route path='/Search' element={
           <Search
+            isUrlQuery={isUrlQuery}
+            setUrlQuery={setUrlQuery}
+            setFilteredList={setFilteredList}
             clgIndex={clgIndex}
             setClgIndex={setClgIndex}
             compareArray={compareArray}
@@ -205,6 +219,8 @@ function App() {
               setCompareArray={setCompareArray}
             />} 
           />
+          <Route path='/college-predictor' element={<PredictorPage/>}/>
+          {/* <Route path='*' element={ <ErrorPage/> }/> */}
         </Routes>
       </BrowserRouter>
   )

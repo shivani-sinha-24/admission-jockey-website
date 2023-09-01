@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Searchnav({search,setSearch,setState,setCity,setType}) {
+function Searchnav({search,setSearch,setState,setCity,setType, handleSearchClick}) {
   
   const clearPrevFilter = ()=>{
     setCity([]); setState([]); setType([]);
@@ -18,9 +18,9 @@ function Searchnav({search,setSearch,setState,setCity,setType}) {
 
         <div className='searchform'>
 
-            <form action="">
+            <form action=""onSubmit={e=>{e.preventDefault();handleSearchClick()}}>
               <input type="text" placeholder='College name' name='search' value={search} onChange={e=>{setSearch(e.target.value);}}/>
-              <button onClick={e=>{e.preventDefault()}}><i className="fa-solid fa-magnifying-glass"></i></button>
+              <button onClick={e=>handleSearchClick()}><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
            

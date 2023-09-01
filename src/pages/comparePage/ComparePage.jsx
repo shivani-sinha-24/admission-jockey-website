@@ -54,12 +54,6 @@ const ComparePage = ({clgIndex,setClgIndex,compareArray,setCompareArray,isCompar
       fetchCourseData(comparedClg[3]?.affilite_by, setCourseArray4);
     }
   }, [comparedClg]);
-    
-    console.log(courseArray1);
-    console.log(courseArray2);
-    console.log(courseArray3);
-    console.log(courseArray4);
-  // get.course-> pass(university name array)->map ->universityname-> find uniId ->idArray-> courses-> return coursesArray
   
   return (
     <div className='compare-page'>
