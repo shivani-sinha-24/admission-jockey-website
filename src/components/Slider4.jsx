@@ -16,7 +16,6 @@ import { getCollegeList } from "../../redux/Action/PropertyAction";
 import { useNavigate } from 'react-router-dom';
 
 
-
 function Slider4() {
     const navigate = useNavigate()
     const dispatch = useDispatch();
@@ -91,6 +90,7 @@ function Slider4() {
                             <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true} showArrows={false} >
                                 <div className='card2'>
                                     {collegeRows?.firstRowUni?.length > 0 ? collegeRows?.firstRowUni?.map((fItem) => {
+                                        console.log('fItem',fItem)
                                         return (
                                             <div className='card21'>
                                                 <div className='card211'>
@@ -108,7 +108,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -136,7 +136,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -161,7 +161,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -189,7 +189,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -214,7 +214,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -239,7 +239,7 @@ function Slider4() {
                                                 <hr />
                                                 <div className='card23'>
                                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <button onClick={()=>navigate(`/detail/${fItem?._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )

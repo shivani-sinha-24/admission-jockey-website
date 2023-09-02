@@ -14,9 +14,11 @@ import logo3 from "../assets/images/graphiceralogo.png"
 import { getCollegeList } from "../../redux/Action/PropertyAction";
 import logo5 from '../assets/images/graphiceralogo.png'
 import logo4 from "../assets/images/utranchellogo.jpeg"
+import { useNavigate } from 'react-router-dom';
 
 function Partner({isOpen,setIsOpen}) {
-
+    
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     const [universityRows, setUniversityRows] = useState();
     const [universityLogoRows, setUniversityLogoRows] = useState();

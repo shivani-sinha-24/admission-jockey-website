@@ -4,8 +4,12 @@ import PredictorNav from '../../components/PredictorNav/PredictorNav'
 import PredictorMainContent from '../../components/PredictorMainContent/PredictorMainContent'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const PredictorPage = () => {
+const PredictorPage = ({setSelectedCourse}) => {
+
+  const navigate = useNavigate()
   const [step,setStep] = useState(1)
 
   const [degree,setDegree] = useState('')
@@ -64,7 +68,12 @@ const PredictorPage = () => {
     onSubmit: (values) => {
       // Handle form submission here
       values = {...values, degree, course, working, hours, budget, emi, priority, qualification, score, reason}
-      console.log(values);
+      axios.post(`${import.meta.env.VITE_BASE_URL}/createPrecictQueryList`,values)
+      .then(res=>{
+        setSelectedCourse(res.data.query.course);
+        navigate('/search?course='+res.data.query.course)
+      })
+      .catch(err=>console.log(err))
     },
   });
 

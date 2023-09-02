@@ -219,7 +219,7 @@ function App() {
               setCompareArray={setCompareArray}
             />} 
           />
-          <Route path='/college-predictor' element={<PredictorPage/>}/>
+          <Route path='/college-predictor' element={<PredictorPage setSelectedCourse={setSelectedCourse} />}/>
           {/* <Route path='*' element={ <ErrorPage/> }/> */}
         </Routes>
       </BrowserRouter>

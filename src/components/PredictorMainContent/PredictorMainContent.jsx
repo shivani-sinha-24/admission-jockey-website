@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import './PredictorMainContent.css'
-import { courseType,pgCourses,ugCourses,executiveEducation,job,doctorate,skilling,advanceDiploma} from '../../data/predictorData/predictorData'
+// import { courseType,pgCourses,ugCourses,executiveEducation,job,doctorate,skilling,advanceDiploma} from '../../data/predictorData/predictorData'
+import { useSelector } from 'react-redux'
 
 const PredictorMainContent = ({step,setStep,degree,setDegree,degreeErr,setDegreeErr,course,courseErr,setcourseErr,setcourse,working,setworking,workingErr,setworkingErr,hours,sethours,hoursErr,sethoursErr,budget,setbudget,budgetErr,setbudgetErr,emi,setemi,emiErr,setemiErr,priority,setpriority,priorityErr,setpriorityErr,qualification,setqualification,qualificationErr,setqualificationErr,score,setscore,scoreErr,setscoreErr,reason,setreason,reasonErr,setreasonErr,formik}) => {
+  
+  const college = useSelector(state=>state.property.property.colleges)
+
+  let courses = useSelector(state=>state?.university?.universityCourses).map(course=>{
+    if(course.type==degree ){ return course?.name}
+  } ).filter(value => value !== undefined && value !== null);
+
+  let degreeType = useSelector(state=>state?.university?.universityCourses).map(course=>course.type).filter(value => value !== undefined && value !== null);
+  const filteredcollege = useSelector(state=>state?.university?.college)
+  let universityCourses = [...new Set(courses)]
+  let degreeOptions = [...new Set(degreeType)]
   
   const rOptions = ['Yes','No']
   const wOptions = ['Yes','No']
@@ -23,25 +35,25 @@ const PredictorMainContent = ({step,setStep,degree,setDegree,degreeErr,setDegree
     },
   ]
 
-  const [courseOption,setCourseOption] = useState()
+  // const [courseOption,setCourseOption] = useState()
 
-  useEffect(()=>{
-    if(degree == 'PG Courses'){
-      setCourseOption(pgCourses)
-    }else if(degree == 'UG Courses'){
-      setCourseOption(ugCourses)
-    }else if(degree == 'Executive Education'){
-      setCourseOption(executiveEducation)
-    }else if(degree == 'Job Guarantee'){
-      setCourseOption(job)
-    }else if(degree == 'Doctorate/Ph.D.'){
-      setCourseOption(doctorate)
-    }else if(degree == 'Skilling & Certificate'){
-      setCourseOption(skilling)
-    }else if(degree == 'Advanced Diploma'){
-      setCourseOption(advanceDiploma)
-    }
-  },[degree])
+  // useEffect(()=>{
+  //   if(degree == 'PG Courses'){
+  //     setCourseOption(pgCourses)
+  //   }else if(degree == 'UG Courses'){
+  //     setCourseOption(ugCourses)
+  //   }else if(degree == 'Executive Education'){
+  //     setCourseOption(executiveEducation)
+  //   }else if(degree == 'Job Guarantee'){
+  //     setCourseOption(job)
+  //   }else if(degree == 'Doctorate/Ph.D.'){
+  //     setCourseOption(doctorate)
+  //   }else if(degree == 'Skilling & Certificate'){
+  //     setCourseOption(skilling)
+  //   }else if(degree == 'Advanced Diploma'){
+  //     setCourseOption(advanceDiploma)
+  //   }
+  // },[degree])
   
   const nextStep = (step)=>{
     if(step < 12){
@@ -96,11 +108,11 @@ const PredictorMainContent = ({step,setStep,degree,setDegree,degreeErr,setDegree
               { degreeErr && <div className="error">Please select a degree type</div> }
             <div className="degrees">
               {
-                courseType?.length>0 &&
-                courseType?.map((course,index)=>
-                <div className={`degree ${degree === course?.name ? 'option-selected' : ''}`} key={index} onClick={()=>setDegree(course?.name)}>
-                    <img src={course?.logo} alt="degree" />
-                    <p>{course?.name}</p>
+                degreeOptions?.length>0 &&
+                degreeOptions?.map((course,index)=>
+                <div className={`degree ${degree === course ? 'option-selected' : ''}`} key={index} onClick={()=>setDegree(course)}>
+                    <img src='https://collegevidya.com/_next/static/media/degree.570053f6.svg' alt="degree" />
+                    <p>{course}</p>
                   </div>
                 )
               }
@@ -114,10 +126,11 @@ const PredictorMainContent = ({step,setStep,degree,setDegree,degreeErr,setDegree
             { courseErr && <div className="error">Please select a course</div> }
             <div className="courses">
               {
-                courseOption?.map((courseName,index)=>
-                <div className={`degree ${course === courseName?.name ? 'option-selected' : ''}`} key={index} onClick={()=>setcourse(courseName?.name)}>
-                    <img src={courseName?.logo} alt="degree" />
-                    <p>{courseName?.name}</p>
+                // courseOption?.map((courseName,index)=>
+                universityCourses?.map((courseName,index)=>
+                <div className={`degree ${course === courseName ? 'option-selected' : ''}`} key={index} onClick={()=>setcourse(courseName)}>
+                    <img src={'https://d1aeya7jd2fyco.cloudfront.net/icon/mcom.svg'} alt="degree" />
+                    <p>{courseName}</p>
                   </div>
                 )
               }

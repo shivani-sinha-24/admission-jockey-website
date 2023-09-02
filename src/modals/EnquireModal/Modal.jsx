@@ -38,7 +38,7 @@ const modal = ({ isOpen, onRequestClose, name,setIsOpen }) => {
         contentLabel="Modal"
         appElement={document.getElementById("root")} // Set the app element here
         className={{
-        base: "modal-base",
+        base: "modal-base w30",
         afterOpen: "modal-base_after-open",
         beforeClose: "modal-base_before-close",
         }}

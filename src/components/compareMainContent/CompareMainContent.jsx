@@ -166,20 +166,20 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <>
             <div className="top">
               <div className="detail">
-                <div className="left">Course Credential</div>
-                <div className="right">Degree</div>
+                <div className="left">Approved by</div>
+                <div className="right">{compareArray[0]?.approve_by}</div>
               </div>
               <div className="detail">
-                <div className="left">Course Level</div>
-                <div className="right">12th</div>
+                <div className="left">Affiliate by</div>
+                <div className="right">{compareArray[0]?.affilite_by?.join(', ')}</div>
               </div>
               <div className="detail">
-                <div className="left">Duration</div>
-                <div className="right">4 Year</div>
+                <div className="left">Contact Number</div>
+                <div className="right">{compareArray[0]?.phone}</div>
               </div>
               <div className="detail">
-                <div className="left">Mode</div>
-                <div className="right">Full Time</div>
+                <div className="left">Email</div>
+                <div className="right">{compareArray[0]?.email}</div>
               </div>
             </div>
             <div className="bottom">
@@ -203,20 +203,20 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <>
             <div className="top">
               <div className="detail">
-                <div className="left">Course Credential</div>
-                <div className="right">Degree</div>
+                <div className="left">Approved by</div>
+                <div className="right">{compareArray[1]?.approve_by}</div>
               </div>
               <div className="detail">
-                <div className="left">Course Level</div>
-                <div className="right">12th</div>
+                <div className="left">Affiliate by</div>
+                <div className="right">{compareArray[1]?.affilite_by?.join(', ')}</div>
               </div>
               <div className="detail">
-                <div className="left">Duration</div>
-                <div className="right">4 Year</div>
+                <div className="left">Contact Number</div>
+                <div className="right">{compareArray[1]?.phone}</div>
               </div>
               <div className="detail">
-                <div className="left">Mode</div>
-                <div className="right">Full Time</div>
+                <div className="left">Email</div>
+                <div className="right">{compareArray[1]?.email}</div>
               </div>
             </div>
             <div className="bottom">
@@ -240,20 +240,20 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <>
             <div className="top">
               <div className="detail">
-                <div className="left">Course Credential</div>
-                <div className="right">Degree</div>
+                <div className="left">Approved by</div>
+                <div className="right">{compareArray[2]?.approve_by}</div>
               </div>
               <div className="detail">
-                <div className="left">Course Level</div>
-                <div className="right">12th</div>
+                <div className="left">Affiliate by</div>
+                <div className="right">{compareArray[2]?.affilite_by?.join(', ')}</div>
               </div>
               <div className="detail">
-                <div className="left">Duration</div>
-                <div className="right">4 Year</div>
+                <div className="left">Contact Number</div>
+                <div className="right">{compareArray[2]?.phone}</div>
               </div>
               <div className="detail">
-                <div className="left">Mode</div>
-                <div className="right">Full Time</div>
+                <div className="left">Email</div>
+                <div className="right">{compareArray[2]?.email}</div>
               </div>
             </div>
             <div className="bottom">
@@ -277,20 +277,20 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <>
             <div className="top">
               <div className="detail">
-                <div className="left">Course Credential</div>
-                <div className="right">Degree</div>
+                <div className="left">Approved by</div>
+                <div className="right">{compareArray[3]?.approve_by}</div>
               </div>
               <div className="detail">
-                <div className="left">Course Level</div>
-                <div className="right">12th</div>
+                <div className="left">Affiliate by</div>
+                <div className="right">{compareArray[3]?.affilite_by?.join(', ')}</div>
               </div>
               <div className="detail">
-                <div className="left">Duration</div>
-                <div className="right">4 Year</div>
+                <div className="left">Contact Number</div>
+                <div className="right">{compareArray[3]?.phone}</div>
               </div>
               <div className="detail">
-                <div className="left">Mode</div>
-                <div className="right">Full Time</div>
+                <div className="left">Email</div>
+                <div className="right">{compareArray[3]?.email}</div>
               </div>
             </div>
             <div className="bottom">
