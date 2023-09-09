@@ -42,16 +42,20 @@ const ComparePage = ({clgIndex,setClgIndex,compareArray,setCompareArray,isCompar
     };
 
     if (comparedClg[0]) {
-      fetchCourseData(comparedClg[0]?.affilite_by, setCourseArray1);
+      fetchCourseData(comparedClg[0]?.edu_type=='University'?[comparedClg[0]?.name]:comparedClg[0]?.affilite_by, setCourseArray1);
+      // fetchCourseData(comparedClg[0]?.affilite_by, setCourseArray1);
     }
     if (comparedClg[1]) {
-      fetchCourseData(comparedClg[1]?.affilite_by, setCourseArray2);
+      fetchCourseData(comparedClg[1]?.edu_type=='University'?[comparedClg[1]?.name]:comparedClg[1]?.affilite_by, setCourseArray2);
+      // fetchCourseData(comparedClg[1]?.affilite_by, setCourseArray2);
     }
     if (comparedClg[2]) {
-      fetchCourseData(comparedClg[2]?.affilite_by, setCourseArray3);
+      fetchCourseData(comparedClg[2]?.edu_type=='University'?[comparedClg[2]?.name]:comparedClg[2]?.affilite_by, setCourseArray3);
+      // fetchCourseData(comparedClg[2]?.affilite_by, setCourseArray3);
     }
     if (comparedClg[3]) {
-      fetchCourseData(comparedClg[3]?.affilite_by, setCourseArray4);
+      fetchCourseData(comparedClg[3]?.edu_type=='University'?[comparedClg[3]?.name]:comparedClg[3]?.affilite_by, setCourseArray4);
+      // fetchCourseData(comparedClg[3]?.affilite_by, setCourseArray4);
     }
   }, [comparedClg]);
   

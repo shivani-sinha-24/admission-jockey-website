@@ -8,6 +8,7 @@ import filterIcon from '../assets/filter icon.png'
 import { useDispatch } from 'react-redux'
 import { getCollegesForSelectedCourse } from '../../redux/Action/universityCourseAction'
 import { useNavigate } from 'react-router-dom'
+import SearchPageCollege from './SearchPageCollege/SearchPageCollege'
 // import { city,state,collegeType } from '../data/filterCategory/FilterCategory'
 
 function Subbar({setSearchParams,compareMultiClg,setCompareMultiClg,compareArray, setCompareArray, universityCourses, search, setSearch, Fees, setFees, City, setCity, State, setState, Type, setType, SelectedCourse, setSelectedCourse, collegeList, city, state, collegeType, ClearFilter, isOpen, setIsOpen }) {  
@@ -139,7 +140,7 @@ function Subbar({setSearchParams,compareMultiClg,setCompareMultiClg,compareArray
                             })
                         }}  
                     >
-                        <option value=""> Select Course</option>
+                        <option value="" className='select-course'> Select Course</option>
                         {
                             universityCourses?.length>0 &&
                             universityCourses?.map((course,index)=><option key={index+1} value={course}> {course}</option>)
@@ -247,58 +248,7 @@ function Subbar({setSearchParams,compareMultiClg,setCompareMultiClg,compareArray
                 {
                     collegeList?.length>0
                     ?
-                    collegeList.map(college =>
-                        <div className='slides' id={college?._id} key={college?._id}>
-                            <div className='imgages'>
-                                <div className='img1'>
-                                    {/* <img src={img1} alt="" /> */}
-                                    <img src={`${import.meta.env.VITE_BASE_URL}/${college?.image}`} alt="" />
-                                </div>
-                                <div className='img2'>
-                                    <img src={img2} alt="" />
-                                    <img src={img3} alt="" />
-                                    <div className='img3'>
-                                        <p>View All</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='content'>
-                                <div className="content-top">
-                                <h1>{college?.name||'University of Petroleum and Energy Studies '}</h1>
-                                <span>
-                                    (
-                                        { college?.property_district } {college?.property_district && college?.property_state && ' ,'} { college?.property_state }
-                                    )
-                                </span>
-                                </div>
-                                <div className='content1'>
-                                    {/* <button> <span><i className="fa-solid fa-star"></i></span>Student Choice</button> */}
-                                    <button>
-                                    <i className="fa-solid fa-star"></i><span>Student Choice</span>
-                                    </button>
-                                    <div className='content12'>
-                                        <div>
-                                            <span>Approved by:</span>
-                                            <img src={naac} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='content2'>
-                                    <h2>BCA ₹15,00,000</h2>
-                                    <div className="buttons">
-                                        <button onClick={(e)=>{
-                                            e.preventDefault();
-                                            const updatedCompareArray = [...compareArray, college];
-                                            setCompareArray(updatedCompareArray);
-                                            setCompareMultiClg(true);
-                                            setIsOpen(true);
-                                        }}>Compare</button>
-                                        <button>Apply Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        )
+                    collegeList.map(college => <SearchPageCollege college={college} />)
                     :
                     <div className='no-colleges'>No colleges found</div>
                 }

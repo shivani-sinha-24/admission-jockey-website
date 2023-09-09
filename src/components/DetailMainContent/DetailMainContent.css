@@ -1,20 +1,241 @@
 .detail-page .detail-main-content{
     width: 100%;
-    color: black;
-    padding: 0px 150px 80px 150px;
+    color: rgb(50, 8, 87,1);
+}
+.detail-page a{
+    text-decoration: none;
+    color: rgb(50, 8, 87,1);
 }
 .detail-page .detail-main-content .top{
+    padding: 0px 150px 60px 150px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 10px;
+    font-size: larger;
+    font-weight: bold;
+    gap: 60px;
+    width: 100%;
+}
+.detail-page .detail-main-content .info{
+    padding: 50px 0px 0 0 ;
+    background-color: #efefef;
+    width: 100%;
+    border-top: 2px solid rgba(217, 217, 217, 0.5);
+    border-bottom: 2px solid rgba(217, 217, 217, 0.5);
+    box-shadow: 0px -5px 5px rgba(217, 217, 217, 0.5), 0px 5px 5px rgba(217, 217, 217, 0.5);
+}
+.detail-page .detail-main-content .info .name{
+    padding: 0 150px;
+    margin-bottom: 30px;
+}
+.detail-page .detail-main-content .info .desc{
+    padding: 0 150px 35px 150px;
+    font-size: 15px;
+}
+.detail-page .detail-main-content .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-top: 3px solid rgba(217, 217, 217, 0.5);
+    padding: 20px 150px ;
+    font-size: larger;
+    font-weight: bold;
+}
+.detail-page .detail-main-content .courses-details{
+    padding: 30px 0px;
+    width: 100%;
+}
+.detail-page .detail-main-content .courses-details .search-course{
+    padding: 35px 150px 0 150px;
+}
+.detail-page .detail-main-content .courses-details .search-course input{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #efefef;
+    border: 2px solid #efefef;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: medium;
+}
+.detail-page .detail-main-content .parent {
+    padding: 50px 150px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.detail-page .detail-main-content .parent .child .c-top{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 8px; */
+}
+.detail-page .detail-main-content .parent .child .c-top .c-top-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 70%;
+
+}
+.detail-page .detail-main-content .parent .child .c-top .c-top-left .c-t-l-p1{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.detail-page .detail-main-content .parent .child .c-top .c-top-left .c-t-l-p2{
+    display: flex;
+    align-items: center; gap: 5px;
+}
+.detail-page .detail-main-content .parent .child .c-top .c-top-right .c-t-r-p1{
+    color: rgb(0, 109, 0);
+    font-size: x-large;
+    font-weight: bold;
+}
+.detail-page .detail-main-content .parent .child .c-top .c-top-right{
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+}
+.detail-page .detail-main-content .parent .child:nth-child(1) .c-top{
+    min-height: 140px;
+    background-color: rgb(245, 245, 245,0.5);
+    padding:30px 25px;
+    border: none;
+    border-radius: 10px;
+}
+.detail-page .detail-main-content .parent .child:nth-child(2) .c-top{
+    min-height: 140px;
+    background-color: rgba(0, 145, 0, 0.2);
+    padding:30px 25px;
+    border: none;
+    border-radius: 10px;
+}
+.detail-page .detail-main-content .parent .child:nth-child(3) .c-top{
+    min-height: 140px;
+    padding:30px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 227,0.5);
+}
+.detail-page .detail-main-content .parent .child:nth-child(4) .c-top{
+    min-height: 140px;
+    background-color: rgb(255, 192, 203,0.2);
+    padding:30px 25px;
+    border: none;
+    border-radius: 10px;
+}
+.detail-page .detail-main-content .parent .child .c-bottom{
+    background-color: rgb(0, 109, 0);
+    color: white;
+    width: fit-content;
+    text-align: right;
+    position: relative;
+    left: 447.5px;
+    top: -18px;
+    font-weight: medium;
+    padding: 6px 25px;
+    border: none;
+    border-radius: 20px;
+}
+.detail-page .detail-main-content .parent .child {
+    width: 49%;
+}
+button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left,
+button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right{
+    background: none;
+} 
+.react-multiple-carousel__arrow--left::before,
+.react-multiple-carousel__arrow--right::before {
+    color: black;
+    font-size: xx-large !important;
+    font-weight: bold;
+    /* width: fit-content; */
+    /* background: none; */
+}
+.react-multiple-carousel__arrow::before {
+    font-size: 20px;
+    display: block;
+    font-family: revicons;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    background: white;
+}
+.detail-page .detail-main-content .gallery{
+    border-top: 2px solid rgba(217, 217, 217, 0.5);
+    border-bottom: 2px solid rgba(217, 217, 217, 0.5);
+    box-shadow: 0px -5px 5px rgba(217, 217, 217, 0.5), 0px 5px 5px rgba(217, 217, 217, 0.5);
+    padding: 35px 150px 80px 150px;
+    background-color: #efefef;    
+}
+.detail-page .detail-main-content .gallery .heading{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.detail-page .detail-main-content .gallery-images{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}.detail-page .detail-main-content .gallery-images .image{
+    width: 289.5px;
+    height: 230px;
+    border: none;
+    border-radius: 8px;
+}
+.detail-page .detail-main-content .hostel{
+    padding: 80px 150px 50px 150px;
+    display: flex;
+    gap: 55px;
+}
+.detail-page .detail-main-content .hostel .left div{
+    font-size: 35px;
+    font-weight: 1000;
+}
+.detail-page .detail-main-content .hostel .left img{
+    width: 200px;
+    height: 100px;
+}
+.detail-page .detail-main-content .hostel .right{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.detail-page .detail-main-content .scholarship{
+    background-color: rgb(255, 192, 203,0.25);
+}
+.detail-page .detail-main-content .scholarship .s-top{
+    padding: 100px 150px 50px 150px;
+    display: flex;
+    gap: 55px;
+    /* margin-bottom: 50px; */
+}
+.detail-page .detail-main-content .scholarship .s-top .p1{
+    font-size: 37.5px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.detail-page .detail-main-content .scholarship .s-top .p2{
+    font-size: 30px;
+}
+.detail-page .detail-main-content .scholarship .s-top .left img{
+    width: 200px;
+    height: 200px;
+}
+.detail-page .detail-main-content .scholarship .bottom .s-desc{
+    padding: 0px 150px 50px 150px;
+    font-size: medium;
 }
 
 
 /* **************************************** HOVER CSS **************************************** */
 
-.detail-page .detail-main-content .top div.top-item:hover{
+.detail-page .detail-main-content .top div.top-item:hover,
+.detail-page .detail-main-content .view:hover,
+.detail-page .detail-main-content .parent .child .c-bottom:hover{
     cursor: pointer;
 }
 
@@ -27,8 +248,16 @@
 
 @media (min-width:900px)  and (max-width:1199.99px) {
     /* lg screen */
-    .detail-page .detail-main-content{
-        padding: 0 40px 40px 40px;
+    .detail-page .detail-main-content .courses-details .search-course,
+    .detail-page .detail-main-content .scholarship .bottom .s-desc,
+    .detail-page .detail-main-content .scholarship .s-top,
+    .detail-page .detail-main-content .hostel,
+    .detail-page .detail-main-content .parent,
+    .detail-page .detail-main-content .top,
+    .detail-page .detail-main-content .info .name,
+    .detail-page .detail-main-content .info .desc,
+    .detail-page .detail-main-content .gallery{
+        padding: 0px 40px 40px 40px;
     }
 
 }
@@ -37,7 +266,23 @@
     /* md screen */
     .detail-page .detail-main-content{
         margin-top: -40px;
-        padding: 0 40px 40px 40px;
+    }
+    .detail-page .detail-main-content .courses-details .search-course,
+    .detail-page .detail-main-content .scholarship .bottom .s-desc,
+    .detail-page .detail-main-content .scholarship .s-top,
+    .detail-page .detail-main-content .hostel,
+    .detail-page .detail-main-content .parent,
+    .detail-page .detail-main-content .top,
+    .detail-page .detail-main-content .info .name,
+    .detail-page .detail-main-content .info .desc,
+    .detail-page .detail-main-content .gallery{
+        padding: 0px 40px 40px 40px;
+    }
+    .detail-page .detail-main-content .courses-details .parent{
+        padding: 0 80px 40px 80px;
+    }
+    .detail-page .detail-main-content .parent .child{
+        width: 100%;
     }
     
 }
@@ -45,6 +290,18 @@
 @media (min-width:500px)  and (max-width:699.99px) {
     /* sm screen */
     .detail-page .detail-main-content{
+        /* padding: 20px; */
+    }
+    .detail-page .detail-main-content .courses-details .search-course,
+    .detail-page .detail-main-content .courses-details .parent,
+    .detail-page .detail-main-content .scholarship .bottom .s-desc,
+    .detail-page .detail-main-content .scholarship .s-top,
+    .detail-page .detail-main-content .hostel,
+    .detail-page .detail-main-content .parent,
+    .detail-page .detail-main-content .top,
+    .detail-page .detail-main-content .info .name,
+    .detail-page .detail-main-content .info .desc,
+    .detail-page .detail-main-content .gallery{
         padding: 20px;
     }
     
@@ -54,7 +311,68 @@
     /* xs screen */
     .detail-page .detail-main-content{
         margin-top: -60px;
+    }
+    .detail-page .detail-main-content .courses-details .search-course,
+    .detail-page .detail-main-content .courses-details .parent,
+    .detail-page .detail-main-content .scholarship .bottom .s-desc,
+    .detail-page .detail-main-content .scholarship .s-top,
+    .detail-page .detail-main-content .hostel,
+    .detail-page .detail-main-content .parent,
+    .detail-page .detail-main-content .top,
+    .detail-page .detail-main-content .info .name,
+    .detail-page .detail-main-content .info .desc,
+    .detail-page .detail-main-content .gallery{
         padding: 20px;
+    }
+    .detail-page .detail-main-content .hostel{
+        padding-top: 40px;
+    }
+    .detail-page .detail-main-content .hostel .left div{
+        text-align: center;
+    }
+    .detail-page .detail-main-content .hostel .left img{
+        margin: 0 auto 10px auto;
+    }
+    .detail-page .detail-main-content .view{
+        gap: 5px;
+        font-size: medium;
+        padding: 20px 0;
+    }
+    .detail-page .detail-main-content .hostel,
+    .detail-page .detail-main-content .scholarship .s-top{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .detail-page .detail-main-content .gallery .heading{
+        padding: 0;
+        font-size: x-large;
+        margin-bottom: 20px;
+    }
+    .detail-page .detail-main-content .scholarship .s-top .p1{
+        font-size: 30px;
+    }
+    .detail-page .detail-main-content .scholarship .s-top .p2{
+        font-size: 20px;
+    }
+    button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left,
+    button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right{
+        display: none;
+    } 
+    .detail-page .detail-main-content .parent .child .c-top{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .detail-page .detail-main-content .parent .child .c-top .c-top-left{
+        width: 100%;
+    }
+    .detail-page .detail-main-content .parent .child .c-bottom{
+        
+    }
+    .detail-page .detail-main-content .top{
+        gap: 8px 17.5px;
+    }
+    .detail-page .detail-main-content .parent .child {
+        width: 100%;
     }
     
 }

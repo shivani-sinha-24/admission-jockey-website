@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EC1 from "../assets/images/EC1.jpeg"
 import EC2 from "../assets/images/EC2.jpeg"
 import EC3 from "../assets/images/EC3.jpeg"
@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom'
 
 function Section2({universityCourses}) {
     const navigate = useNavigate()
+    const [viewmore,setviewmore] = useState(false)
+    const list = viewmore?universityCourses:universityCourses?.slice(0,6)
   return (
    <>
    <div className='card'>
@@ -24,8 +26,8 @@ Explore Courses
    
    < div className='section2'>
 {
-    universityCourses?.length>0 &&
-    universityCourses?.map(course=>
+    list?.length>0 &&
+    list?.map(course=>
     <div className='subsec21'>
         <div className='subsec23'>
             <img src={EC1} alt="target" />
@@ -41,110 +43,9 @@ Explore Courses
     )
 }
    
-
-{/* 
-<div className='subsec21'>
-
-<div className='subsec23'>
-<img src={EC2} alt="target" />
-<div className="subsec23-h1">
-
-<h2>Computers and Technology</h2>
-</div>
-
-<div className='subsec22'>
-    <p>34 Course </p>
-    <button>View Courses</button>
-</div>
-
-</div>
-
-
-</div>
-
-<div className='subsec21'>
-
-<div className='subsec23'>
-<img src={EC3} alt="target" />
-<div className="subsec23-h1">
-
-<h2>Design and Animation</h2>
-</div>
-
-<div className='subsec22'>
-    <p>34 Course </p>
-    <button >View Courses</button>
-</div>
-
-</div>
-
-
-
-
-</div>
-
-<div className='subsec21'>
-
-<div className='subsec23'>
-<img src={EC4} alt="target" />
-<div className="subsec23-h1">
-
-<h2>Medical</h2>
-</div>
-
-<div className='subsec22'>
-    <p>34 Course </p>
-    <button>View Courses</button>
-</div>
-
-</div>
-
-
-</div>
-
-
-<div className='subsec21'>
-
-<div className='subsec23'>
-<img src={EC5} alt="target" />
-<div className="subsec23-h1">
-
-<h2>Pharmacy</h2>
-</div>
-
-<div className='subsec22'>
-    <p>34 Course </p>
-    <button>View Courses</button>
-</div>
-
-</div>
-
-
-</div>
-
-<div className='subsec21'>
-
-<div className='subsec23'>
-<img src={EC6} alt="target" />
-<div className="subsec23-h1">
-
-<h2>Engineering</h2>
-</div>
-
-<div className='subsec22'>
-    <p>34 Course </p>
-    <button>View Courses</button>
-</div>
-
-</div>
-
-
-</div>
-
-*/}
    </div>
 
-   <button className='outer'>view more</button>
+   <button className='outer' onClick={()=>setviewmore(!viewmore)}>view {viewmore?'less':'more'}</button>
 
    </div>
      

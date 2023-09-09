@@ -1,7 +1,7 @@
 .detail-page .detail-nav{
     width:100%;
     background-color: white;
-    padding: 40px 150px;
+    padding: 30px 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
 }
 .detail-page .detail-nav .nav-item-xs-sm-md-lg{
     font-size: 2.25rem !important;

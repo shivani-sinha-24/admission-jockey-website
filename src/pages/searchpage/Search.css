@@ -141,6 +141,13 @@
     border-radius: 10px;
     font-size: larger;
   }
+  .rightside select  option{
+    color: white;
+  }
+  .rightside select  option.select-course{
+    color:  whitesmoke;
+  }
+  
   
   .rightside label{
     padding: 0px 10px;

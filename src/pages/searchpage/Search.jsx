@@ -215,6 +215,8 @@ function Search({isUrlQuery,ClearFilter,setUrlQuery,setFilteredList,clgIndex,set
       setUrlQuery(false)
     }
   },[searchParams,courseParam,typeParam,queryParam,cityParam,stateParam])
+  
+  useEffect(()=>setCompareArray([]),[])
 
   return (
     <div className='search-page'>

@@ -22,6 +22,8 @@ function Partner({isOpen,setIsOpen}) {
     const dispatch = useDispatch();
     const [universityRows, setUniversityRows] = useState();
     const [universityLogoRows, setUniversityLogoRows] = useState();
+    const [collegeRows, setCollegeRows] = useState();
+    const [collegeLogoRows, setCollegeLogoRows] = useState();
 
     // Function to collect data
     const getUniversityRow = async () => {
@@ -32,12 +34,24 @@ function Partner({isOpen,setIsOpen}) {
         const response = await fetch(`${import.meta.env.VITE_BASE_URL}/universityLogoRows`).then((response) => response.json());
         setUniversityLogoRows(response);
     };
+    const getCollegeRow = async () => {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/collegeRows`).then((response) => response.json())
+        .catch(err=>console.log(err))
+        setCollegeRows(response);
+    };
+    const getCollegeLogoRow = async () => {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/collegeLogoRows`).then((response) => response.json())
+        .catch(err=>console.log(err))
+        setCollegeLogoRows(response);
+    };
     const { college } = useSelector(state => ({
         college: state?.property?.property?.colleges?.filter(item => item.edu_type == "University")
     }));
     useEffect(() => {
         getUniversityRow();
         getUniversityLogoRow();
+        getCollegeRow();
+        getCollegeLogoRow();
         dispatch(getCollegeList());
     }, []);
     let setCountForCarousel = () => {
@@ -121,7 +135,7 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
                                                     <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
@@ -149,8 +163,8 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -174,8 +188,8 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -202,8 +216,8 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -227,8 +241,8 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -252,8 +266,8 @@ function Partner({isOpen,setIsOpen}) {
                                                 </div>
                                                 <hr />
                                                 <div className='card23'>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, dicta.</p>
-                                                    <button>View details</button>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
                                                 </div>
                                             </div>
                                         )
@@ -266,7 +280,218 @@ function Partner({isOpen,setIsOpen}) {
 
                 </div>
 
+                <div className="upartner">Our Top College Partners</div>
 
+                <div className='partners'>
+                    {collegeLogoRows?.firstRowUni?.length > 0 && collegeLogoRows?.secondRowUni?.length == 0 && collegeLogoRows?.thirdRowUni?.length == 0 ?
+                        <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true}>
+                            <div className='uni'>
+                                {collegeLogoRows?.firstRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                        </Carousel> : ""}
+                    {collegeLogoRows?.firstRowUni?.length > 0 && collegeLogoRows?.secondRowUni?.length > 0 && collegeLogoRows?.thirdRowUni?.length == 0 ?
+                        <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true}>
+                            <div className='uni'>
+                                {collegeLogoRows?.firstRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                            <div className='uni'>
+                                {collegeLogoRows?.secondRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                        </Carousel> : ""}
+                    {collegeLogoRows?.firstRowUni?.length > 0 && collegeLogoRows?.secondRowUni?.length > 0 && collegeLogoRows?.thirdRowUni?.length > 0 ?
+                        <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true}>
+                            <div className='uni'>
+                                {collegeLogoRows?.firstRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                            <div className='uni'>
+                                {collegeLogoRows?.secondRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                            <div className='uni'>
+                                {collegeLogoRows?.thirdRowUni?.map((clg) => {
+                                    return <img src={`${import.meta.env.VITE_BASE_URL}/${clg?.logo}`} />
+                                })}
+                            </div>
+                        </Carousel> : ""}
+                </div>
+
+                <div className='featured'>
+                    {/* <h2>Featured Universities</h2> */}
+                    <div className="upartner">Featured Colleges</div>
+                    <div className='ftuni'>
+                        {collegeRows?.firstRowUni?.length > 0 && collegeRows?.secondRowUni?.length == 0 && collegeRows?.thirdRowUni?.length == 0 ?
+                            <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true} showArrows={false} >
+                                <div className='card2'>
+                                    {collegeRows?.firstRowUni?.length > 0 ? collegeRows?.firstRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                            </Carousel> : ""}
+                        {collegeRows?.firstRowUni?.length > 0 && collegeRows?.secondRowUni?.length > 0 && collegeRows?.thirdRowUni?.length == 0 ?
+                            <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true} showArrows={false} >
+                                <div className='card2'>
+                                    {collegeRows?.firstRowUni?.length > 0 ? collegeRows?.firstRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                                <div className='card2'>
+                                    {collegeRows?.secondRowUni?.length > 0 ? collegeRows?.secondRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                            </Carousel> : ""}
+                        {collegeRows?.firstRowUni?.length > 0 && collegeRows?.secondRowUni?.length > 0 && collegeRows?.thirdRowUni?.length > 0 ?
+                            <Carousel infiniteLoop={true} showStatus={false} showThumbs={false} autoPlay={true} showArrows={false} >
+                                <div className='card2'>
+                                    {collegeRows?.firstRowUni?.length > 0 ? collegeRows?.firstRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                                <div className='card2'>
+                                    {collegeRows?.secondRowUni?.length > 0 ? collegeRows?.secondRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                                <div className='card2'>
+                                    {collegeRows?.thirdRowUni?.length > 0 ? collegeRows?.thirdRowUni?.map((fItem) => {
+                                        return (
+                                            <div className='card21'>
+                                                <div className='card211'>
+                                                    <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.image}`} alt="" />
+                                                </div>
+                                                <div className='card22'>
+                                                    <div className='card221'>
+                                                        <img src={`${import.meta.env.VITE_BASE_URL}/${fItem?.logo}`} alt="" />
+                                                    </div>
+                                                    {/* <div className="card221" style={{ backgroundImage: `url(${logo1})`, width: '40%', height: '100%',zIndex:'900', backgroundSize: '100% 100%', backgroundRepeat:'no-repeat' }}></div> */}
+                                                    <div className="card222">
+                                                        <h4>{fItem?.name}</h4>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='card23'>
+                                                    <p>{fItem?.description?.replace(/<[^>]*>/g, '').slice(0,95).replace(/&nbsp;/g, ' ')+'...'}</p>
+                                                    <button onClick={()=>navigate(`/detail/${fItem._id}`)}>View details</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    }) : ""}
+                                </div>
+                            </Carousel> : ""}
+                    </div>
+
+
+
+                </div>
 
             </section>
         </>

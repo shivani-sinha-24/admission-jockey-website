@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getCollegeList } from '../../../redux/Action/PropertyAction';
 import { getWebCompareCollegeList } from '../../../redux/Action/universityCourseAction';
+import CompareModalCollege from '../../components/compareModalCollege/CompareModalCollege';
 
 const modal = ({clgIndex,setClgIndex,compareMultiClg, setCompareMultiClg, isOpen, setIsOpen, onRequestClose, compareArray,setCompareArray}) => {
 
@@ -43,7 +44,7 @@ const modal = ({clgIndex,setClgIndex,compareMultiClg, setCompareMultiClg, isOpen
       }
     }
   }
-console.log(compareArray );
+  
   // Function to add a single college at a specific index
   const addCollegeAtIndex = (clg) => {
   //   // Check if the college is already in the compareArray
@@ -62,12 +63,12 @@ console.log(compareArray );
 
 
   const getCompareClgList = ()=>{
-    console.log('compareArray aaaaaaaaaaaaaaaaaaaaa',compareArray);
+
     let value = []
     compareArray?.forEach(clg=>value=[...value,clg?._id])
 
 
-    console.log('valuesssssssssssss',value);
+
     if(compareArray.length>0){
 
       dispatch(getWebCompareCollegeList(value))
@@ -132,10 +133,7 @@ console.log(compareArray );
                     <div className="details">
                       <div className="d-top">{clg?.name.length > 35 ? clg?.name.substring(0, 35) + '...' : clg?.name}</div>
                       <div className="d-middle"><i className="fa-solid fa-location-dot" ></i>{clg?.property_district}, {clg?.property_state}</div>
-                      <div className="d-bottom">
-                        <div className="d-b-left">Bachelor of Science [B.Sc]...</div>
-                        <div className="d-b-right">₹ 70000</div>
-                      </div>
+                      <CompareModalCollege clg={clg}/>
                     </div>
                   </div>
                 )
@@ -151,10 +149,7 @@ console.log(compareArray );
                     <div className="details">
                       <div className="d-top">{clg?.name.length > 35 ? clg?.name.substring(0, 35) + '...' : clg?.name}</div>
                       <div className="d-middle"><i className="fa-solid fa-location-dot" ></i>{clg?.property_district}, {clg?.property_state}</div>
-                      <div className="d-bottom">
-                        <div className="d-b-left">Bachelor of Science [B.Sc]...</div>
-                        <div className="d-b-right">₹ 70000</div>
-                      </div>
+                      <CompareModalCollege clg={clg}/>
                     </div>
                   </div>
                 )

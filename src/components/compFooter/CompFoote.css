@@ -31,6 +31,9 @@
     gap: 15px;
     align-items: center;
 }
+.compare-page .compare-footer .hghlight-link .link-container div{
+    margin: 15px 0;
+}
 .compare-page .compare-footer .footer-bottom{
     width: 100%;
     padding: 30px 100px;
@@ -96,6 +99,7 @@
 
 .compare-page .compare-footer .bottom-left .left-item .item:hover,
 .compare-page .compare-footer .footer-bottom2 .bottom-left2 div:hover,
-.compare-page .compare-footer .footer-bottom .platforms .p-logo:hover{
+.compare-page .compare-footer .footer-bottom .platforms .p-logo:hover,
+.compare-page .compare-footer .hghlight-link .link-container div:hover{
     cursor: pointer;
 }

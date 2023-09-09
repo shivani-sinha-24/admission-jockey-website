@@ -19,7 +19,7 @@ const DetailCollegeImg = () => {
   }
 
   return (
-    <div className='clg-img' style={clgImg}>
+    <div className='clg-img' style={{backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/${college?.image})`}}>
       <div className="clg-img-top">
         <div className="top-left">
           <img src={`${import.meta.env.VITE_BASE_URL}/${college?.logo}`} alt="" />

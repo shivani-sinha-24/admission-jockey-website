@@ -28,7 +28,7 @@ const DetailPage = () => {
 
   return (
     <div className='detail-page'>
-      <Bar/>
+      {/* <Bar/> */}
       <DetailNav 
         detailNavdropdown={detailNavdropdown} 
         setDetailNavDropdown={setDetailNavDropdown} 

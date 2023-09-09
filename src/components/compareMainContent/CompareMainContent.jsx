@@ -185,7 +185,7 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <div className="bottom">
               {
                 courseArray1?.length>0 &&
-                courseArray1?.map(course=>
+                courseArray1?.slice(0,4).map(course=>
                   <div className="detail">
                     
                     <div className="left">{course?.full_name}</div>
@@ -222,7 +222,7 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <div className="bottom">
               {
                 courseArray2?.length>0 &&
-                courseArray2?.map(course=>
+                courseArray2?.slice(0,4).map(course=>
                   <div className="detail">
                     
                     <div className="left">{course?.full_name}</div>
@@ -259,7 +259,7 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <div className="bottom">
               {
                 courseArray3?.length>0 &&
-                courseArray3?.map(course=>
+                courseArray3?.slice(0,4).map(course=>
                   <div className="detail">
                     
                     <div className="left">{course?.full_name}</div>
@@ -296,7 +296,7 @@ const CompareMainContent = ({courseArray1,courseArray2,courseArray3,courseArray4
             <div className="bottom">
               {
                 courseArray4?.length>0 &&
-                courseArray4?.map(course=>
+                courseArray4?.slice(0,4).map(course=>
                   <div className="detail">
                     
                     <div className="left">{course?.full_name}</div>

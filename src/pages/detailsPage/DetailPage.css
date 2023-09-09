@@ -3,6 +3,7 @@
     height: 100vh;
     /* overflow-x: hidden; */
     color: rgb(50, 8, 87,1);
+    cursor: default;
 }
 .detail-page .firstbar{
     width: 100%;
