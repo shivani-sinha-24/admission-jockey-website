@@ -133,7 +133,7 @@ const modal = ({clgIndex,setClgIndex,compareMultiClg, setCompareMultiClg, isOpen
                     <div className="details">
                       <div className="d-top">{clg?.name.length > 35 ? clg?.name.substring(0, 35) + '...' : clg?.name}</div>
                       <div className="d-middle"><i className="fa-solid fa-location-dot" ></i>{clg?.property_district}, {clg?.property_state}</div>
-                      <CompareModalCollege clg={clg}/>
+                      <CompareModalCollege isOpen={isOpen} compareArray={compareArray} clg={clg}/>
                     </div>
                   </div>
                 )
@@ -149,7 +149,7 @@ const modal = ({clgIndex,setClgIndex,compareMultiClg, setCompareMultiClg, isOpen
                     <div className="details">
                       <div className="d-top">{clg?.name.length > 35 ? clg?.name.substring(0, 35) + '...' : clg?.name}</div>
                       <div className="d-middle"><i className="fa-solid fa-location-dot" ></i>{clg?.property_district}, {clg?.property_state}</div>
-                      <CompareModalCollege clg={clg}/>
+                      <CompareModalCollege isOpen={isOpen} compareArray={compareArray} clg={clg}/>
                     </div>
                   </div>
                 )
@@ -157,7 +157,7 @@ const modal = ({clgIndex,setClgIndex,compareMultiClg, setCompareMultiClg, isOpen
             </div>
           </div>
           <div className="bottom-buttons">
-            <button className='btn-close' onClick={()=>onRequestClose()}>close</button>
+            <button className='btn-close' onClick={()=>{setCompareArray([]);onRequestClose()}}>close</button>
             <button
               className="btn-compare"
               onClick={() => {

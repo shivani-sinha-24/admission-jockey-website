@@ -248,7 +248,7 @@ function Subbar({setSearchParams,compareMultiClg,setCompareMultiClg,compareArray
                 {
                     collegeList?.length>0
                     ?
-                    collegeList.map(college => <SearchPageCollege college={college} />)
+                    collegeList.map(college => <SearchPageCollege setIsOpen={setIsOpen} college={college} compareArray={compareArray} setCompareArray={setCompareArray} setCompareMultiClg={setCompareMultiClg} />)
                     :
                     <div className='no-colleges'>No colleges found</div>
                 }

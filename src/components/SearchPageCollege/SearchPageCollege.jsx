@@ -4,7 +4,7 @@ import img3 from "../../assets/images/kolkata.jpeg"
 import naac from "../../assets/images/naac.png"
 import axios from 'axios'
 
-const SearchPageCollege = ({college}) => {
+const SearchPageCollege = ({setIsOpen,college,compareArray,setCompareArray,setCompareMultiClg}) => {
     const [gallery,setgallery] = useState([])
     
     useEffect(()=>{

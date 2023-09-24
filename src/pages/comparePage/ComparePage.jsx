@@ -57,7 +57,7 @@ const ComparePage = ({clgIndex,setClgIndex,compareArray,setCompareArray,isCompar
       fetchCourseData(comparedClg[3]?.edu_type=='University'?[comparedClg[3]?.name]:comparedClg[3]?.affilite_by, setCourseArray4);
       // fetchCourseData(comparedClg[3]?.affilite_by, setCourseArray4);
     }
-  }, [comparedClg]);
+  }, [comparedClg,compareMultiClg]);
   
   return (
     <div className='compare-page'>

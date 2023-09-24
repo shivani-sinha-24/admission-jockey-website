@@ -293,7 +293,7 @@
   }
   .c1 {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
   }
     
   .main2{
@@ -691,6 +691,7 @@
     }
     .layout {
       display: flex;
+      background: linear-gradient(90deg, #A6308A 0%, rgb(96, 66, 177)100%);
     }
     
     .layout1 {
@@ -883,7 +884,10 @@
       font-size: 20px;
       margin:  5px 20px;
     }
-  
+    
+    .home-page .slide{
+      background:none ;
+    }
    
     .step.active {
       border: 2px solid;
